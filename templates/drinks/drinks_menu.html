@@ -1,0 +1,39 @@
+{% extends 'base_other.html' %}
+{% block content %}
+
+		<div id="content-container" >
+			<div id="drinks_menu"  >
+
+
+				<img src="icons/pizza-banner.png" id="pizza-banner" />
+				<img src="icons/sides-banner.png" id="sides-banner" />
+
+				<div id="drinks_one"  >
+
+					<div id="background"  >
+						<img src="icons/wood-background-drinks.png" id="wood-background-drinks" />
+						<img src="icons/white-background-drinks.png" id="white-background-drinks" />
+						<img src="icons/line-drinks.png" id="line-drinks" />
+
+					</div>
+					<img src="drinks/2l-coca-cola.png" id="coca-cola" />
+					<div id="name" >
+						2l Coca-Cola
+					</div>
+					<div id="price" >
+						<span>Verð</span>
+						<span style="color:rgb(240, 162, 241)">200</span>
+					</div>
+					<img src="icons/shopping-cart.png" id="shopping-cart2" />
+
+				</div>
+				<img src="icons/drinks.png" id="drinks" />
+				<img src="icons/sauces.png" id="sauces" />
+				<img src="icons/sides.png" id="sides" />
+				<img src="icons/drinks-header.png" id="drinks-header" />
+
+			</div>
+		</div>
+		<script>var specialChars = document.querySelectorAll("span.char"); for(var c=0; c<specialChars.length; c++){ specialChars[c].innerHTML = decodeURIComponent(specialChars[c].innerHTML); }</script>
+
+{% endblock %}

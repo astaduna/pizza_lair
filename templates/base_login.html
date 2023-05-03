@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>base-pizza</title>
+    <link rel="stylesheet" href="{% static 'css/pizza_menu.css' %}" />
+</head>
+<body>
+				<div id="banner"  >
+					<img src="icons/banner-background.png" id="banner-background" />
+					<img src="icons/profile.png" id="profile" />
+					<img src="icons/shopping-cart.png" id="shopping-cart" />
+					<img src="icons/sides-banner.png" id="sides-banner" />
+					<img src="icons/offers-banner.png" id="offers-banner" />
+					<img src="icons/logo.png" id="logo" />
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}">Logout</a> </li>
+                        {% else %}
+                        <li><a href="{% url 'login' %}">Login</a> </li>
+                        <li><a href="{% url 'register' %}">Register</a> </li>
+                    {% endif %}
+
+				</div>
+				<img src="icons/pizza-header.png" id="pizza-header" />
+
+    {%  block content %}
+    {% endblock %}
+
+    <div id="footer"  >
+            <img src="icons/footer-background.png" id="footer-background" />
+            <img src="icons/instagram.png" id="instagram" />
+            <img src="icons/facebook.png" id="facebook" />
+            <div id="phone-number" >
+                555-5555
+            </div>
+            <div id="email" >
+                <a href="mailto:pizzalair@hotstuff.com" target="_blank">pizzalair@hotstuff.com</a>
+            </div>
+            <div id="opening_hours" >
+                Opnunartímar
+            </div>
+            <div id="locations" >
+                Staðir
+            </div>
+    </div>
+</body>
+</html>
