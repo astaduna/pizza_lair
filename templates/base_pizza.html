@@ -20,6 +20,12 @@
             <div class="logo_container">
                 <img src="{% static 'images/logo.png'%}" id="logo" />
             </div>
+            <div class="login-cart-container">
+                <a href="{% url 'profile-index' %}"><img src="{% static 'images/profile.png'%}" id="profile" />
+                </a>
+                <a href="{% url 'cart-index' %}"><img src="{% static 'images/shopping-cart.png.png'%}" id="profile" />
+                </a>
+            </div>
         </div>
 
         <img src="{% static 'images/profile.png'%}" id="profile" />

@@ -5,7 +5,6 @@
     text-decoration: none;
 }
 body {
-
 	background: linear-gradient(90deg, rgb(229, 162, 255) 0%, rgba(255,255,255,1) 50%, rgb(89, 255, 252) 100%);
 }
 .banner {
@@ -22,35 +21,29 @@ body {
     height: 100%;
     margin: 0 auto;
 }
-
 .logo_container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .logo_container img {
     width: 140px;
 }
-
 .header_links {
     list-style-position: outside;
     display: block;
     float: left;
     margin: 20px;
 }
-
 .header_links a{
     display: block;
 }
-
 #sides-banner {
     width: 60%;
 }
 #offers-banner {
     width: 60%;
 }
-
 #footer {
 	background-color: #FFD9FB;
 	position: absolute;
