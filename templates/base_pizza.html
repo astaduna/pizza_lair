@@ -8,9 +8,15 @@
 </head>
 <body>
     <div id="banner" >
+        <ul>
+            <li><a href="{% url 'sides-index' %}">
+                <img src="{% static 'images/sides-banner.png'%}" id="sides-banner" />
+                </a>
+            </li>
+        </ul>
         <img src="{% static 'images/profile.png'%}" id="profile" />
         <img src="{% static 'images/shopping-cart.png'%}" id="shopping-cart" />
-        <img src="{% static 'images/sides-banner.png'%}" id="sides-banner" />
+
         <img src="{% static 'images/logo.png'%}" id="logo" />
     </div>
     <div id ='header'>Main</div>
