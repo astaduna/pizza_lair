@@ -1,10 +1,14 @@
-
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
 body {
-	margin: 0px;
-	padding: 0px;
+
 	background: linear-gradient(90deg, rgb(229, 162, 255) 0%, rgba(255,255,255,1) 50%, rgb(89, 255, 252) 100%);
 }
-#banner {
+.banner {
     width: 95%;
     height: 100px;
     margin:auto;
@@ -13,11 +17,40 @@ body {
     border: 1px solid #FA6BEB;
     border-radius: 10px;
 }
-#logo {
-	height: 28px;
-	width: 28px;
-
+.innner-banner {
+    width: 100px;
+    height: 100%;
+    margin: 0 auto;
 }
+
+.logo_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo_container img {
+    width: 140px;
+}
+
+.header_links {
+    list-style-position: outside;
+    display: block;
+    float: left;
+    margin: 20px;
+}
+
+.header_links a{
+    display: block;
+}
+
+#sides-banner {
+    width: 60%;
+}
+#offers-banner {
+    width: 60%;
+}
+
 #footer {
 	background-color: #FFD9FB;
 	position: absolute;
