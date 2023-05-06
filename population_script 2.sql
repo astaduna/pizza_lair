@@ -7,7 +7,6 @@ INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, med
 INSERT INTO pizza_pizzaimage (image, pizza_id) VALUES('image', '1')
 
 
-
 -- Drink
 INSERT INTO drinks_drink (name, price) VALUES('Coca Cola 2l', '200')
 -- DrinkImage
