@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from pizza.models import Pizza
 
 
 def index(request):
-    return render(request, 'pizza/pizza_menu.html')
+    context = {'pizzas': Pizza.objects.all().order_by('id')}
+    return render(request, 'pizza/pizza_menu.html', context)

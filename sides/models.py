@@ -4,7 +4,7 @@ from django.db import models
 class Side(models.Model):
     name = models.CharField(max_length=255)
     description = models.CharField(max_length=255, blank=True)
-    price = models.FloatField()
+    price = models.IntegerField()
     allergens = models.CharField(max_length=255, blank=True)
 
 class SideImage(models.Model):

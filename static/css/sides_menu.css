@@ -113,3 +113,8 @@ li {
     padding: 20px;
     margin: auto;
 }
+.sides {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 80px;
+}
