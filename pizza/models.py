@@ -1,15 +1,18 @@
 from django.db import models
 
 # Create your models here.
-
 class PizzaType(models.Model):
     name = models.CharField(max_length=255)
 
 class Pizza(models.Model):
     name = models.CharField(max_length=255)
+    toppings = models.CharField(max_length=255, blank=True)
     descriptions = models.CharField(max_length=255, blank=True)
     type = models.ForeignKey(PizzaType, on_delete=models.CASCADE)
-    price = models.FloatField()
+    small_price = models.IntegerField(default=True)
+    medium_price = models.IntegerField(default=True)
+    large_price = models.IntegerField(default=True)
+    allergens = models.CharField(max_length=255, blank=True)
 
 class PizzaImage(models.Model):
     image = models.CharField(max_length=999)
