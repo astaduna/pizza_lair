@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
+import drinks.apps
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,7 +44,11 @@ INSTALLED_APPS = [
     'pizza.apps.PizzalairConfig',
     'sides.apps.SidesConfig',
     'drinks.apps.DrinksConfig',
-    'offers.apps.OffersConfig'
+    'offers.apps.OffersConfig',
+    'product.apps.ProductConfig',
+    'order.apps.OrderConfig',
+    'sauces.apps.SaucesConfig'
+
 ]
 
 MIDDLEWARE = [
@@ -86,7 +92,7 @@ DATABASES = {
         'NAME': 'pizza-lair-db',
         'USER': 'pizza-lair-db-user',
         'PASSWORD': '12345',
-        'HOST': '35.188.85.114',
+        'HOST': '35.228.184.70',
         'PORT': '5432'
     }
 }
