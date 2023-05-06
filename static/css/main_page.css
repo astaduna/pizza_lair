@@ -61,26 +61,7 @@ body {
 .login-cart-container a{
     display: block;
 }
-.pizza-header {
-    width: 90%;
-    height: 35px;
-    margin: auto;
-    margin-top: 10px;
-    background-color: #FFD9FB;
-    border: 1px solid #FA6BEB;
-    border-radius: 10px;
-    text-align: center;
-}
-.pizza-img-container img {
-    width: 120px;
-    margin-left: 80px;
-}
-#sides-banner {
-    width: 60%;
-}
-#offers-banner {
-    width: 60%;
-}
+
 #profile {
     width: 25px;
 }
@@ -113,4 +94,25 @@ li {
     display: inline-block;
     padding: 20px;
     margin: auto;
+}
+
+.main-select  {
+    text-align: center;
+    padding-top: 20px;
+}
+.main-select a {
+    padding: 30px;
+}
+.order-container {
+    text-align: center;
+    padding-top: 70px;
+}
+#pizza-main {
+    width: 130px;
+}
+#sides-main {
+    width: 120px;
+}
+#offers-main {
+    width: 140px;
 }

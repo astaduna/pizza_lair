@@ -5,44 +5,48 @@
     <meta charset="UTF-8">
     <title>base-pizza</title>
     <link rel="stylesheet" href="{% static 'css/pizza_menu.css' %}" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-				<div id="banner"  >
-					<img src="icons/banner-background.png" id="banner-background" />
-					<img src="icons/profile.png" id="profile" />
-					<img src="icons/shopping-cart.png" id="shopping-cart" />
-					<img src="icons/sides-banner.png" id="sides-banner" />
-					<img src="icons/offers-banner.png" id="offers-banner" />
-					<img src="icons/logo.png" id="logo" />
-                    {% if user.is_authenticated %}
-                        <li><a href="{% url 'logout' %}">Logout</a> </li>
-                        {% else %}
-                        <li><a href="{% url 'login' %}">Login</a> </li>
-                        <li><a href="{% url 'register' %}">Register</a> </li>
-                    {% endif %}
-
-				</div>
-				<img src="icons/pizza-header.png" id="pizza-header" />
-
-    {%  block content %}
-    {% endblock %}
-
-    <div id="footer"  >
-            <img src="icons/footer-background.png" id="footer-background" />
-            <img src="icons/instagram.png" id="instagram" />
-            <img src="icons/facebook.png" id="facebook" />
-            <div id="phone-number" >
-                555-5555
+    <div class="container">
+        <div clas="main">
+            <div class="banner" >
+                <div class="inner-banner">
+                    <div class="header_links">
+                        <a href="{% url 'pizza-index' %}">
+                            <img src="{% static 'images/pizza-banner.png'%}" id="pizza-banner" />
+                        </a>
+                        <a href="{% url 'sides-index' %}">
+                            <img src="{% static 'images/sides-banner.png'%}" id="sides-banner" />
+                        </a>
+                        <a href="{% url 'offers-index' %}">
+                            <img src="{% static 'images/offers.png'%}" id="offers-banner" />
+                        </a>
+                    </div>
+                    <div class="login-cart-container">
+                        <a><img src="{% static 'images/profile.png'%}" id="profile" />
+                        </a>
+                        <a><img src="{% static 'images/shopping-cart.png'%}" id="cart" />
+                        </a>
+                    </div>
+                    <div class="logo_container">
+                        <img src="{% static 'images/logo.png'%}" id="logo" />
+                    </div>
+                </div>
             </div>
-            <div id="email" >
-                <a href="mailto:pizzalair@hotstuff.com" target="_blank">pizzalair@hotstuff.com</a>
-            </div>
-            <div id="opening_hours" >
-                Opnunartímar
-            </div>
-            <div id="locations" >
-                Staðir
-            </div>
+        {%  block content %}
+        {% endblock %}
+        </div>
     </div>
+        <div class="footer">
+        <img src="{% static 'images/instagram.png'%}" id="instagram" />
+        <img src="{% static 'images/facebook.png'%}" id="facebook" />
+        <ul class="footer-items">
+            <li id="phone-number">555-5555</li>
+            <li id="email"><a href="mailto:pizzalair@hotstuff.com" target="_blank">pizzalair@hotstuff.com</a></li>
+            <li id="opening-hours">Opnunartímar</li>
+            <li id="location">Staðir</li>
+        </ul>
+        </div>
 </body>
 </html>

@@ -45,7 +45,7 @@ body {
     list-style-position: outside;
     display: block;
     float: left;
-    margin: 20px;
+    margin: 0px 0px 0px 20px;
 }
 
 .header_links a{
@@ -61,7 +61,7 @@ body {
 .login-cart-container a{
     display: block;
 }
-.pizza-header {
+.offers-header {
     width: 90%;
     height: 35px;
     margin: auto;
@@ -71,12 +71,12 @@ body {
     border-radius: 10px;
     text-align: center;
 }
-.pizza-img-container img {
-    width: 120px;
+.offers-img-container img {
+    width: 100px;
     margin-left: 80px;
 }
 #sides-banner {
-    width: 60%;
+    width: 50%;
 }
 #offers-banner {
     width: 60%;
