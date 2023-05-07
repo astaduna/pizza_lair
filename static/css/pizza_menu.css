@@ -91,7 +91,7 @@ body {
     width: 95%;
     height: 50px;
     margin: auto;
-    margin-top:-50px;
+    margin-top: 30px;
     display: block;
     clear: both;
     background-color: #FFD9FB;
@@ -113,4 +113,12 @@ li {
     display: inline-block;
     padding: 20px;
     margin: auto;
+}
+
+element.style {
+    padding-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-left: 10%;
 }
