@@ -1,5 +1,10 @@
 {% extends 'base_pizza.html' %}
 {% block content %}
 
+<div class="pizzas">
+    {% for pizza in pizzas %}
+        {% include 'pizza/single_pizza.html' with pizza=pizza %}
+    {% endfor %}
+</div>
 
 {% endblock %}
