@@ -27,21 +27,13 @@ body {
     border: 1px solid #FA6BEB;
     border-radius: 10px;
 }
-.innner-banner {
-    width: 100px;
-    height: 100%;
-    margin: 0 auto;
-}
-
 .logo_container {
     text-align: center;
 }
-
 .logo_container img {
     width: 140px;
     margin-left: 70px;
 }
-
 .login-cart-container {
     list-style-position: outside;
     display: block;
@@ -96,6 +88,11 @@ body {
   }
 #search_bar {
     width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #FA6BEB;
+}
+.button {
     height: 40px;
     border-radius: 10px;
     border: 1px solid #FA6BEB;
