@@ -2,16 +2,10 @@
 {% load static %}
 {% block content %}
 
-    <div class="sides-header">
-        <div class="sides-img-container">
-            <img src="{% static 'images/sides-banner.png'%}" id="sides-header" />
-        </div>
-    </div>
     <div class="sides">
     {% for side in sides %}
         {% include 'sides/single_side.html' with side=side %}
     {% endfor %}
 </div>
-
 
 {% endblock %}
