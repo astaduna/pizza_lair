@@ -2,18 +2,7 @@
 {% load static %}
 {% block content %}
 
-        <ul class="main-select">
 
-            <a href="{% url 'pizza-index' %}">
-                <img src="{% static 'images/pizza_menu.png'%}" id="pizza-main" />
-            </a>
-            <a href="{% url 'offers-index' %}">
-                <img src="{% static 'images/offer_menu.png'%}" id="offers-main" />
-            </a>
-            <a href="{% url 'sides-index' %}">
-                <img src="{% static 'images/sides_menu.png'%}" id="sides-main" />
-            </a>
-        </ul>
         <div class="order-container">
             <a href="{% url 'pizza-index' %}">
                 <img src="{% static 'images/order.png'%}" id="order" />

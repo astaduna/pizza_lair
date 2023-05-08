@@ -41,17 +41,6 @@ body {
     width: 140px;
 }
 
-.header_links {
-    list-style-position: outside;
-    display: block;
-    float: left;
-    margin: 20px;
-}
-
-.header_links a{
-    display: block;
-}
-
 .login-cart-container {
     list-style-position: outside;
     display: block;
@@ -61,12 +50,80 @@ body {
 .login-cart-container a{
     display: block;
 }
+#profile {
+    width: 25px;
+}
+#cart {
+    width: 25px;
+}
+
+.inner_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_bar li {
+    display: inline;
+    float: left;
+
+}
+.nav_links {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+.nav_bar li a {
+    display: block;
+    padding: 10px 10px;
+    color: black;
+}
+
+.nav_bar li a:hover,.nav_bar li a:active {
+    color: hotpink;
+}
+
+.search_container {
+    display: flex;
+    justify-content: flex-end;
+  }
+#search_bar {
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #FA6BEB;
+    margin: 10px
+}
+#order_by {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #FA6BEB;
+    margin: 10px 10px 0px 0px;
+}
 
 #profile {
     width: 25px;
 }
 #cart {
     width: 25px;
+}
+#offer_icon {
+    width: 25px;
+    padding-top: 5px;
+}
+#cocacola {
+    width: 30px;
+}
+#pizza_icon {
+    width: 30px;
+    padding-top: 4px;
+}
+#side_icon {
+    width: 25px;
+}
+#sauce_icon {
+    width: 25px;
+    padding-top: 5px;
 }
 .footer {
     width: 95%;
@@ -95,24 +152,35 @@ li {
     padding: 20px;
     margin: auto;
 }
-
-.main-select  {
-    text-align: center;
-    padding-top: 20px;
-}
-.main-select a {
-    padding: 30px;
-}
 .order-container {
     text-align: center;
     padding-top: 70px;
 }
-#pizza-main {
-    width: 130px;
+.pizzas {
+    padding-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-left: 10%;
 }
-#sides-main {
-    width: 120px;
+.drinks {
+    padding-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-left: 10%;
 }
-#offers-main {
-    width: 140px;
+.sauce {
+    padding-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-left: 10%;
+}
+.sides {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-left: 15%;
+    padding-top: 80px;
 }
