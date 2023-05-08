@@ -1,0 +1,18 @@
+
+{% extends 'base_pizza.html' %}
+
+{% block content %}
+
+    <h1>pizza.name</h1>
+    <p>{{ pizza.toppings }}</p>
+    <p>{{ pizza.descriptions }}</p>
+    <p>{{ pizza.allergens }}</p>
+    <p>Lítil   Miðstærð   Stór</p>
+    <div class="pizza-size">
+        <p>{{ pizza.small_price }} {{ pizza.medium_price }} {{ pizza.large_price }}</p>
+    </div>
+    {% for pizza_image in pizza.pizzaimage_set.all %}
+        <img src="{{ pizza_image.image }}" class="pizza-img">
+    {% endfor %}
+
+{% endblock %}

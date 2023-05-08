@@ -8,143 +8,143 @@ INSERT INTO pizza_pizzatype (name) VALUES('Vegan');
 
 
 -- Hawaiian
-INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large price, allergens)
+INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large_price, allergens)
 VALUES('Hawaiian',
 'Ananas, skinka, ostur og sósa',
 'Hawaiian pizza er ljúffeng pizza. Þessi pizza er toppuð með bragðmikilli samsetningu af skinku sneiðum og sætum, safaríkum ananas. Hawaiian pizza hefur náð vinsæld um allan heim og er þetta fullkomna pizzan fyrir þig.', '1',
-'1990', 
-'2990', '3990', 
+'1990',
+'2990', '3990',
 'glúten, mjólk, soja');
 
 -- Pepperoni and Mushroom
-INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large price, allergens)
+INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large_price, allergens)
 VALUES('Pepp & Svepp',
 'Pepperoni, sveppir, ostur og sósa',
 'Pepperoni og sveppa pizza er klassísk og ljúffeng pizzasamsetning. Þessi pizza er hlaðin bragðmiklum sneiðum af pepperoni og ljúffengum, jarðbundnum sveppum, sem skapar ríkulegt og seðjandi bragð sem mun láta
  þig langa í meira.', '1',
-'1990', 
-'2990', '3990', 
+'1990',
+'2990', '3990',
 'glúten, mjólk, sellerí, sinnep');
 
 
 -- El Fuego
-INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large price, allergens)
+INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large_price, allergens)
 VALUES('El Fuego',
 'Ferskur chili, jalapeno, pepperoni, piparostur, sterkt pepperoni, svartur pipar, ostur og sósa',
-'Við kynnum dýrindis pizzuna okkar El Fuego. Pizzan er hlaðin fersku chili og jalapeno, sem gefur henni hið fullkomna magn af hita til að vekja bragðlaukana þína. Hver sneið er ríkulega toppuð með bragðmiklum pepperoni, 
+'Við kynnum dýrindis pizzuna okkar El Fuego. Pizzan er hlaðin fersku chili og jalapeno, sem gefur henni hið fullkomna magn af hita til að vekja bragðlaukana þína. Hver sneið er ríkulega toppuð með bragðmiklum pepperoni,
 gerð með blöndu af bræddum ostum og með svörtum pipar fyrir auka spark.',
-'1', 
-'2090', '3090', 
+'1',
+'2090', '3090',
 '4090', 'glúten, mjólk, sellerí, sinnep');
 
 
 -- Spicy Vegan
-INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large price, allergens)
+INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large_price, allergens)
 VALUES('Spicy Vegan',
 'Ananas, BBQ topping, chiliflögur, hvítlaukur, jalapeno, svartur pipar, veganostur og sósa',
 'Ef þú ert að leita að ljúffengri vegan pizzu, þá er Vegan pizzan okkar frábær kostur. Þessi pizza er búin til með stökkri, vegan-vænnum botn og toppað með ljúffengri blöndu af sætri og
  sterkri BBQ sósu, safaríkum bitum af ananas og bragðmikilli blöndu af vegan osti, chili flögum, hvítlauk, jalapeno og svörtum pipar.',
-'1', 
-'2090', '3090', 
+'1',
+'2090', '3090',
 '4090', 'glúten');
 
 
 -- Margarita
-INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large price, allergens)
+INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large_price, allergens)
 VALUES('Margarita',
-'Ostur og sósa', 
+'Ostur og sósa',
 'Dekraðu þig með þeim klassísku, Margarita pizzunni okkar! Nýgerða deigið okkar er fullkomlega bakað í stökka gullbrúna skorpu og síðan toppað með pizzasósu og rifnum bræddum osti.',
-'1', 
-'1790', '1990', 
+'1',
+'1790', '1990',
 '2090', 'glúten, mjólk');
 
 
 -- Yorky
-INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large price, allergens)
+INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large_price, allergens)
 VALUES('Yorky',
 'Beikonkurl, cheddaarostur, hakk, ostur og sósa',
-'Dekraðu við þig í dýrindis og bragðmiklum rétti með beikonkurli, cheddarosti og hakki! Stökku beikonkurlin okkar eru fullkomnar. Parað með bragðmiklu og safaríku hakki, toppað með rjómalöguðum cheddarosti og bragðmiklli sósu.', 
-'1', '2090', 
-'3090', '4090', 
+'Dekraðu við þig í dýrindis og bragðmiklum rétti með beikonkurli, cheddarosti og hakki! Stökku beikonkurlin okkar eru fullkomnar. Parað með bragðmiklu og safaríku hakki, toppað með rjómalöguðum cheddarosti og bragðmiklli sósu.',
+'1', '2090',
+'3090', '4090',
 'glúten, mjólk, soja, sellerí');
 
 
 -- Everything Meaty
-INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large price, allergens)
+INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large_price, allergens)
 VALUES('Everything Meaty',
 'Pepperoni, skinka, hakk, beikonkurl, ostur og sósa',
-'Uppfylltu löngun þína með kjötmiklu og bragðmiklu kjötveislunni okkar. Pizzan er toppuð með pepperoni, beikonkurli, skinku og hakki! Nýbakaða deigið okkar er toppað með safaríku pepperoni, skinku og bragðmiklu hakki. Dreyft með rifinn 
+'Uppfylltu löngun þína með kjötmiklu og bragðmiklu kjötveislunni okkar. Pizzan er toppuð með pepperoni, beikonkurli, skinku og hakki! Nýbakaða deigið okkar er toppað með safaríku pepperoni, skinku og bragðmiklu hakki. Dreyft með rifinn
 ost og sósu.', '1',
-'2190', 
-'3190', '4190', 
+'2190',
+'3190', '4190',
 'glúten, mjólk, soja, sellerí, sinnep');
 
 
 -- Luxe
-INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large price, allergens)
+INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large_price, allergens)
 VALUES('Luxe',
 'Pepperoni, skinka, sveppir, ananas ostur og sósa',
 'Uppfylltu lönguninni með ljúffengu Pepperoni og skinku pizzunni okkar, toppað með blöndu af ljúffengu hráefni! Nýbakaða deigið okkar er toppað með krydduðu pepperoni, bragðmikilli skinku, jarðbundnum sveppum,
- safaríkum ananas og blöndu af bræddum osti.', 
-'1', '2090', 
-'3090', '4090', 
+ safaríkum ananas og blöndu af bræddum osti.',
+'1', '2090',
+'3090', '4090',
 'glúten, mjólk, soja, sellerí, sinnep');
 
 -----------------------------------------------
 
 
 -- Risaeðlan
-INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large price, allergens)
+INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large_price, allergens)
 VALUES('Risaeðlan',
 'Beikonkurl, hakk, pepperoni, pulled pork, skinka, BBQ sósa og ostur',
-'Vertu tilbúinn fyrir bragðsprengingu með beikon, kjöthakki og pulled pork pizzunni okkar! Nýgerðu deigið okkar er ríkulega toppað með stökkum beikonkurli, safaríku hakki, krydduðu pepperoni, safaríku svínakjöti,
- bragðmikilli skinku og blöndu af bræddum osti og cheddar osti.', 
-1, 2190, 
-3190, 4190, 
+'Vertu tilbúinn fyrir bragðsprengingu með beikon, kjöthakki og pulled pork pizzunni okkar! Nýgerðu deigið okkar er toppað með stökku beikonkurli, safaríku hakki, krydduðu pepperoni, safaríku svínakjöti,
+ bragðmikilli skinku og blöndu af bræddum osti og cheddar osti.',
+'1', '2190',
+'3190', '4190',
 'glúten, mjólk, soja, sellerí, sinnep');
 
 
 -- Drottningin
-INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large price, allergens)
+INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large_price, allergens)
 VALUES('Drottningin',
 'Beiknsneiðar, ferskur chili, pepperoni, piparostur, rauðlaukur, sveppir, ostur og sósa',
 'Upplifðu eldheita og bragðmikla sprengingu af bragði með krydduðu beikoni og pepperoni pizzunni okkar! Nýgerðu deigið okkar er toppað með stökkum beikonsneiðum, krydduðum ferskum chili, bragðmiklum pepperoni,
  bragðmiklum rauðlauk, jarðbundnum sveppum og blöndu af bræddum mozzarella og piparosti.',
-1, 
-2190, 3190, 
-4190, 'glúten, mjólk, soja, sellerí, sinnep');
+'1',
+'2190', '3190',
+'4190', 'glúten, mjólk, soja, sellerí, sinnep');
 
 
 -- BBQ Queen
-INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large price, allergens)
+INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large_price, allergens)
 VALUES('BBQ Queen',
 'Jalapeno, pepperoni, piparostur, pulled pork, rjómaostur, ostur og BBQ sósa',
-'Upplifðu djarfa og bragðmikla samsetningu af sætuog krydduðu með Pulled Pork Jalapeno pizzunni okkar! Nýlaga deigið okkar er toppað með safaríku svínakjöti, krydduðum jalapeno, bragðmiklar pepperoni, bragðmikill
- rjómaostur og bræddum piparosti.', 
-1, 2190, 
-3190, 4190, 
+'Upplifðu djarfa og bragðmikla samsetningu af sætu og krydduðu með Pulled Pork Jalapeno pizzunni okkar! Nýlaga deigið okkar er toppað með safaríku svínakjöti, krydduðum jalapeno, bragðmiklar pepperoni, bragðmikill
+ rjómaostur og bræddum piparosti.',
+'1', '2190',
+'3190', '4190',
 'glúten, mjólk, soja, sellerí, sinnep');
 
 
 -- Hvítlauks
-INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large price, allergens)
+INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large_price, allergens)
 VALUES('Hvítlauks',
 'Hvítlaukur, hvítlauksolía og ostur',
-'Uppfylltu löngun þína í hvítlauk með ljúffengu hvítlaukspizzunni okkar! Nýgerða deigið okkar erfylltarómatískum keim af ferskum hvítlauk og penslað með hvítlauksolíu, sem skapar ríkulegan ogljúffengan grunn fyrir
- pizzuna. Við toppum það síðan með rausnarlegri gjöf af bræddum osti, og búum til gljáandi áferð sem passar fullkomlega við djarft og bragðmikið bragð hvítlauksins.',
-1, 
-1790, 1990, 
-2090, 'glúten, mjólk');
+'Uppfylltu löngun þína í hvítlauk með ljúffengu hvítlaukspizzunni okkar! Nýgerða deigið okkar er fylltar ómatískum keim af ferskum hvítlauk og penslað með hvítlauksolíu, sem skapar ríkulegan og ljúffengan grunn fyrir
+ pizzuna. Við toppum það síðan með bræddum osti, og búum til gljáandi áferð sem passar fullkomlega við bragð hvítlauksins.',
+'1',
+'1790', '1990',
+'2090', 'glúten, mjólk');
 
 
 -- Vegan Vibes
-INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large price, allergens)
+INSERT INTO pizza_pizza (name, toppings, descriptions, type_id, small_price, medium_price, large_price, allergens)
 VALUES('Vegan Vibes',
-'Vegan kjúkling, Ólífur, sólþurrkaður tómatur, rauðlaukur, sveppir, fersk chili veganostur og sósa',
-'Dekraðu við þig í dýrindis og bragðmikilli veganpizzu með Vegan kjúkling okkar! Nýgerða deigið okkar er toppað með ólífur, sólþurrkuðum tómötum, krydduðum ferskum chili, rauðlaukum, jarðbundnum sveppum og veganosti',
-1, 
-2190, 3190, 
-4190, 'glúten, soja');
+'Vegan kjúkling, ólífur, sólþurrkaður tómatur, rauðlaukur, sveppir, ferskt chilli, veganostur og sósa',
+'Dekraðu við þig í dýrindis og bragðmikilli veganpizzu með Vegan kjúklingnum okkar! Nýgerða deigið okkar er toppað með ólífur, sólþurrkuðum tómötum, krydduðum ferskum chili, rauðlaukum, jarðbundnum sveppum og veganosti',
+'1',
+'2190', '3190',
+'4190', 'glúten, soja');
 
 
 
@@ -152,55 +152,55 @@ VALUES('Vegan Vibes',
 
 -- PizzaImage
 INSERT INTO pizza_pizzaimage (image, pizza_id)
-VALUES('/static/images/pizza/hawaiian.png',
+VALUES('/static/images/hawaiian.png',
 1);
 
 INSERT INTO pizza_pizzaimage (image, pizza_id)
-VALUES('/static/images/pizza/pepperoni_mushroom.png',
+VALUES('/static/images/pepperoni_mushroom.png',
 2);
 
 INSERT INTO pizza_pizzaimage (image, pizza_id)
-VALUES('/static/images/pizza/el_fuego.png',
+VALUES('/static/images/el_fuego.png',
 3);
 
 INSERT INTO pizza_pizzaimage (image, pizza_id)
-VALUES('/static/images/pizza/spicy_vegan.png',
+VALUES('/static/images/spicy_vegan.png',
 4);
 
 INSERT INTO pizza_pizzaimage (image, pizza_id)
-VALUES('/static/images/pizza/margarita.png',
+VALUES('/static/images/margarita.png',
 5);
 
 INSERT INTO pizza_pizzaimage (image, pizza_id)
-VALUES('/static/images/pizza/yorky.png',
+VALUES('/static/images/yorky.png',
 6);
 
 INSERT INTO pizza_pizzaimage (image, pizza_id)
-VALUES('/static/images/pizza/meat.png',
+VALUES('/static/images/meat.png',
 7);
 
 INSERT INTO pizza_pizzaimage (image, pizza_id)
-VALUES('/static/images/pizza/luxe.png',
+VALUES('/static/images/luxe.png',
 8);
 
 INSERT INTO pizza_pizzaimage (image, pizza_id)
-VALUES('/static/images/pizza/risaedlan.png',
+VALUES('/static/images/risaedlan.png',
 9);
 
 INSERT INTO pizza_pizzaimage (image, pizza_id)
-VALUES('/static/images/pizza/drottningin.png',
+VALUES('/static/images/drottningin.png',
 10);
 
 INSERT INTO pizza_pizzaimage (image, pizza_id)
-VALUES('/static/images/pizza/bbq_queen.png',
+VALUES('/static/images/bbq_queen.png',
 11);
 
 INSERT INTO pizza_pizzaimage (image, pizza_id)
-VALUES('/static/images/pizza/garlic.png',
+VALUES('/static/images/garlic.png',
 12);
 
 INSERT INTO pizza_pizzaimage (image, pizza_id)
-VALUES('/static/images/pizza/vegan_vibes.png',
+VALUES('/static/images/vegan_vibes.png',
 13);
 
 
