@@ -1,7 +1,10 @@
 {% extends 'base_other.html' %}
 {% block content %}
 
-
-
+<div class="drinks">
+    {% for drink in drinks %}
+        {% include 'sauces/single_sauce.html' with sauce=sauce %}
+    {% endfor %}
+</div>
 
 {% endblock %}
