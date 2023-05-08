@@ -13,8 +13,13 @@
             <div class="banner" >
                 <div class="inner-banner">
                     <div class="login-cart-container">
-                        <a><img src="{% static 'images/profile.png'%}" id="profile" />
-                        </a>
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'logout' %}">Logout</a>
+                            {% else %}
+                                <a href="{% url 'login' %}">Login</a>
+                                <a href="{% url 'register' %}">Register</a>
+                            {% endif %}
+
                         <a><img src="{% static 'images/shopping-cart.png'%}" id="cart" />
                         </a>
                     </div>
