@@ -2,18 +2,30 @@
 {% extends 'base_main.html' %}
 
 {% block content %}
-
+    {% for pizza_image in pizza.pizzaimage_set.all %}
+        <img src="{{ pizza_image.image }}" class="pizza-img">
+    {% endfor %}
     <h1>{{ pizza.name }}</h1>
     <p>{{ pizza.toppings }}</p>
     <p>{{ pizza.descriptions }}</p>
     <p>{{ pizza.allergens }}</p>
-    <p>Lítil   Miðstærð   Stór</p>
-    <p>hello</p>
-    <div class="pizza-size">
-        <p>{{ pizza.small_price }} {{ pizza.medium_price }} {{ pizza.large_price }}</p>
+    <div class="size-title">
+        <button id="small-btn">
+            LÍTIL
+            <span>{{ pizza.small_price }}</span>
+        </button>
+
+        <button id="medium-btn">
+            MIÐSTÆRÐ
+            <span>{{ pizza.medium_price }}</span>
+        </button>
+
+        <button id="large-btn">
+            STÓR
+            <span>{{ pizza.large_price }}</span>
+        </button>
     </div>
-    {% for pizza_image in pizza.pizzaimage_set.all %}
-        <img src="{{ pizza_image.image }}" class="pizza-img">
-    {% endfor %}
+
+    <button class="add-to-cart" data-pizza-id="{{ pizza.id }}">Bæta í körfu</button>
 
 {% endblock %}
