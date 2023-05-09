@@ -32,7 +32,7 @@ body {
 }
 .logo_container img {
     width: 140px;
-    margin-left: 70px;
+    margin-left: 120px;
 }
 .login-cart-container {
     list-style-position: outside;
@@ -42,6 +42,11 @@ body {
 }
 .login-cart-container a{
     display: block;
+    color: black;
+}
+.login-cart-container a:hover,
+.login-cart-container a:active {
+    color: hotpink;
 }
 #profile {
     width: 25px;
@@ -78,7 +83,8 @@ body {
     color: black;
 }
 
-.nav_bar li a:hover,.nav_bar li a:active {
+.nav_bar li a:hover,
+.nav_bar li a:active {
     color: hotpink;
 }
 
@@ -134,7 +140,7 @@ body {
     width: 95%;
     height: 50px;
     margin: auto;
-    margin-top:-50px;
+    margin-top:40px;
     display: block;
     clear: both;
     background-color: #FFD9FB;
@@ -188,4 +194,50 @@ li {
     gap: 30px;
     margin-left: 15%;
     padding-top: 80px;
+}
+.form_container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    margin: auto;
+}
+
+.form input[type="text"],
+.form input[type="password"] {
+  padding: 10px;
+  width: 300px;
+  margin-bottom: 20px;
+  border: 1px solid #FA6BEB;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+}
+
+.form input[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #FA6BEB;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form input[type="submit"]:hover {
+  background-color: #f802dd;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 10px;
+}
+span.helptext {
+    float: right;
+    margin-bottom: 0;
+    text-align: center;
+    line-height: 1;
+
 }
