@@ -17,7 +17,50 @@ $(document).ready(function(){
                 });
                 $('.pizzas').html(newHTML.join(''));
                 $('#search_bar').val('');
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
 
+    $('#spicy-btn').on('click', function() {
+        $.ajax({
+            url: '/pizzas/type/2',
+            type: 'GET',
+            success: function(resp) {
+                var newHTML = resp.pizzas.map(d => {
+                    return '<div class="pizzas">' +
+                               '<a href="/pizzas/' + d.id + '">' +
+                                   '<img class="pizza-img" src="' + d.firstImage + '"/>' +
+                                   '<h4>' + d.name + '</h4>' +
+                                   '<p>' + d.descriptions + '</p>' +
+                               '</a>' +
+                           '</div>';
+                });
+                $('.pizzas').html(newHTML.join(''));
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+
+    $('#vegan-btn').on('click', function() {
+        $.ajax({
+            url: '/pizzas/type/3',
+            type: 'GET',
+            success: function(resp) {
+                var newHTML = resp.pizzas.map(d => {
+                    return '<div class="pizzas">' +
+                               '<a href="/pizzas/' + d.id + '">' +
+                                   '<img class="pizza-img" src="' + d.firstImage + '"/>' +
+                                   '<h4>' + d.name + '</h4>' +
+                                   '<p>' + d.descriptions + '</p>' +
+                               '</a>' +
+                           '</div>';
+                });
+                $('.pizzas').html(newHTML.join(''));
             },
             error: function(xhr, status, error) {
                 console.error(error);

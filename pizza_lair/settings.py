@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'drinks.apps.DrinksConfig',
     'offers.apps.OffersConfig',
     'product.apps.ProductConfig',
-    'order.apps.OrderConfig',
     'sauces.apps.SaucesConfig'
 
 ]
