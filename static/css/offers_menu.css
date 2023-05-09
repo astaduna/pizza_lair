@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "DM Mono";
+}
+html, body {
+    height: 100%;
+}
+.container {
+    min-height: 100%;
+}
+.main{
+    overflow: auto;
+    padding-bottom: 65px;
+}
+body {
+	background: linear-gradient(90deg, rgb(229, 162, 255) 0%, rgba(255,255,255,1) 50%, rgb(89, 255, 252) 100%);
+}
+.banner {
+    width: 95%;
+    height: 100px;
+    margin:auto;
+    display: block;
+    background-color: #FFD9FB;
+    border: 1px solid #FA6BEB;
+    border-radius: 10px;
+}
+.innner-banner {
+    width: 100px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.logo_container {
+    text-align: center;
+}
+
+.logo_container img {
+    width: 140px;
+}
+
+.header_links {
+    list-style-position: outside;
+    display: block;
+    float: left;
+    margin: 0px 0px 0px 20px;
+}
+
+.header_links a{
+    display: block;
+}
+
+.login-cart-container {
+    list-style-position: outside;
+    display: block;
+    float: right;
+    margin: 20px;
+}
+.login-cart-container a{
+    display: block;
+}
+.offers-header {
+    width: 90%;
+    height: 35px;
+    margin: auto;
+    margin-top: 10px;
+    background-color: #FFD9FB;
+    border: 1px solid #FA6BEB;
+    border-radius: 10px;
+    text-align: center;
+}
+.offers-img-container img {
+    width: 100px;
+    margin-left: 80px;
+}
+#sides-banner {
+    width: 50%;
+}
+#offers-banner {
+    width: 60%;
+}
+#profile {
+    width: 25px;
+}
+#cart {
+    width: 25px;
+}
+.footer {
+    width: 95%;
+    height: 50px;
+    margin: auto;
+    margin-top:-50px;
+    display: block;
+    clear: both;
+    background-color: #FFD9FB;
+    border: 1px solid #FA6BEB;
+    border-radius: 10px;
+}
+.footer img {
+    float: right;
+    padding: 20px;
+    width: 25px;
+}
+
+.footer-items {
+    display: flex;
+    font-size: small;
+    align-items: center;
+}
+li {
+    display: inline-block;
+    padding: 20px;
+    margin: auto;
+}
