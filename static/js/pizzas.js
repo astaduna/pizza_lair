@@ -23,8 +23,10 @@ $(document).ready(function(){
             }
         });
     });
-
-    $('#spicy-btn').on('click', function() {
+    });
+$(document).ready(function(){
+    $('#spicy-btn').on('click', function(e) {
+        e.preventDefault();
         $.ajax({
             url: '/pizzas/type/2',
             type: 'GET',
@@ -45,8 +47,10 @@ $(document).ready(function(){
             }
         });
     });
-
+    });
+$(document).ready(function(){
     $('#vegan-btn').on('click', function() {
+
         $.ajax({
             url: '/pizzas/type/3',
             type: 'GET',

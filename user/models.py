@@ -3,12 +3,11 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Profile(models.Model):
-    DEFAULT_PROFILE_IMAGE = '/images/profile.png'
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=255)
-    address = models.CharField(max_length=255)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, default=User.objects.first())
+    name = models.CharField(max_length=255, blank=True)
+    address = models.CharField(max_length=255, blank=True)
     house_number = models.IntegerField(5)
-    city = models.CharField(max_length=255)
-    country = models.CharField(max_length=255)
+    city = models.CharField(max_length=255, blank=True)
+    country = models.CharField(max_length=255, blank=True)
     zip = models.IntegerField()
-    profile_image = models.CharField(max_length=9999, default=DEFAULT_PROFILE_IMAGE)
+    profile_image = models.CharField(max_length=9999, blank=True)

@@ -35,6 +35,7 @@ def index(request):
         'order_by': order_by
     }
     return render(request, 'pizza/pizza_menu.html', context)
+
 def get_pizza_by_id(request, id):
     return render(request, 'pizza/pizza_detail.html', {
         'pizza': get_object_or_404(Pizza, pk=id)

@@ -9,11 +9,23 @@
     <p>{{ pizza.toppings }}</p>
     <p>{{ pizza.descriptions }}</p>
     <p>{{ pizza.allergens }}</p>
-    <p>Lítil   Miðstærð   Stór</p>
-    <p>hello</p>
-    <div class="pizza-size">
-        <p>{{ pizza.small_price }} {{ pizza.medium_price }} {{ pizza.large_price }}</p>
+    <div class="size-title">
+        <button id="small-btn">
+            LÍTIL
+            <span>{{ pizza.small_price }}</span>
+        </button>
+
+        <button id="medium-btn">
+            MIÐSTÆRÐ
+            <span>{{ pizza.medium_price }}</span>
+        </button>
+
+        <button id="large-btn">
+            STÓR
+            <span>{{ pizza.large_price }}</span>
+        </button>
     </div>
-    <button class="add-to-cart">Bæta í körfu</button>
+
+    <button class="add-to-cart" data-pizza-id="{{ pizza.id }}">Bæta í körfu</button>
 
 {% endblock %}
