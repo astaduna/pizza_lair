@@ -13,16 +13,13 @@
             <div class="banner" >
                 <div class="inner-banner">
                     <div class="login-cart-container">
-                        <a><img src="{% static 'images/profile.png'%}" id="profile" />
                             {% if user.is_authenticated %}
-                                <a href="{% url 'logout' %}"></a>
+                                <a href="{% url 'logout' %}">Logout</a>
                             {% else %}
-                                <a href="{% url 'login' %}"></a>
-                                <a href="{% url 'register' %}"></a>
+                                <a href="{% url 'login' %}">Login</a>
+                                <a href="{% url 'register' %}">Sign up</a>
                             {% endif %}
-                        </a>
-                        <a><img src="{% static 'images/shopping-cart.png'%}" id="cart" />
-                        </a>
+                        <li><a href="{% url 'cart-index' %}"><img src="{% static 'images/shopping-cart.png'%}" id="cart"></a></li>
                     </div>
                     <div class="logo_container">
                         <a href="{% url 'main_page-index' %}">
@@ -42,13 +39,18 @@
                         <li><a href="{% url 'sauces-index' %}">SÓSUR<img src="{% static 'images/sauce_icon.png'%}" id="sauce_icon"></a></li>
                     </ul>
                     <div class="search_container">
+                    <form method="GET">
                         <input type="text" placeholder="Leita.." id="search_bar">
-                        <button type="button" id="search-btn">Leita</button>
+                        <button type="submit" id="search-btn">Leita</button>
+
                         <select name="order_by" id="order_by">
-                            <option value="name">Nafni</option>
-                            <option value="low-high">Hæsta verði</option>
-                            <option value="high-low">Lægsta verði</option>
+                            <option value="name" {% if order_by == 'name' %}selected{% endif %}>Nafn</option>
+                            <option value="high_price" {% if order_by == 'high_price' %}selected{% endif %}>Verð (hæðsta verð)</option>
+                            <option value="low_price" {% if order_by == 'low_price' %}selected{% endif %}>Verð (lægsta verð)</option>
                         </select>
+
+                        <button type="submit">Leita</button>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -69,5 +71,6 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="{% static 'js/pizzas.js' %}"></script>
+<script src="{% static 'js/pizza_detail.js' %}"></script>
 </body>
 </html>
