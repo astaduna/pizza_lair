@@ -1,13 +1,14 @@
-<div class="drink">
+<div class="offer">
     <a href="#">
-        <img class="drink-img" src="{{ drink.drinkimage_set.first.image }}"/>
-        <h2>{{ drink.name }}</h2>
-        <p>Verð</p>
-        <p>{{ drink.price }}</p>
+        <img class="offer-img" src="{{ side.sideimage_set.first.image }}"/>
+        <h2>{{ offer.name }}</h2>
+        <p>{{ offer.description }}</p>
+        <p>{{ offer.price }}</p>
         <form action="/add_to_cart" class="btn-block">
         {% crf_token %}
         <input type="hidden" name="prod_id" value="{{product_id}}" id="prod_id">
         <button type="submit" class="btn-info shadow px-5 py-2 ms-4">Bæta í körfu</button>
         </form>
     </a>
+
 </div>

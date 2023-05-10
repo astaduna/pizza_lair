@@ -11,6 +11,10 @@
     <p>{{ pizza.allergens }}</p>
     <p>{{ pizza.price }}</p>
 
-    <button class="add-to-cart" id="add-btn ">Bæta í körfu</button>
+    <form action="/add_to_cart" class="btn-block">
+    {% crf_token %}
+    <input type="hidden" name="prod_id" value="{{product_id}}" id="prod_id">
+    <button type="submit" class="btn-info shadow px-5 py-2 ms-4">Bæta í körfu</button>
+    </form>
 
 {% endblock %}
