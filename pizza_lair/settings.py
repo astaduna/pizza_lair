@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
-import drinks.apps
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -89,8 +88,8 @@ WSGI_APPLICATION = 'pizza_lair.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pizza-lair-db',
-        'USER': 'pizza-lair-db-user',
+        'NAME': 'pizza_lair_db',
+        'USER': 'pizza_lair_db_user',
         'PASSWORD': '12345',
         'HOST': '35.228.184.70',
         'PORT': '5432'

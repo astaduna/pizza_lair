@@ -7,7 +7,10 @@ def index(request):
     order_by = request.GET.get('order_by', 'name')
 
     if order_by == 'name':
-        pizzas = Pizza.objects.all().order_by('name')
+        pizzas = Pizza.objects.all()
+        for pizza in pizzas:
+            print(pizza.product.name)
+        pizzas = sorted(pizzas, key=lambda x: x.product.name)
     elif order_by == 'high_price':
         pizzas = Pizza.objects.all().order_by('price')
     elif order_by == 'low_price':
@@ -19,7 +22,7 @@ def index(request):
         search_filter = request.GET['search_filter']
         pizzas = [{
             'id': x.id,
-            'name': x.name,
+            'name': x.product.name,
             'toppings': x.toppings,
             'descriptions': x.descriptions,
             'small_price': x.price,

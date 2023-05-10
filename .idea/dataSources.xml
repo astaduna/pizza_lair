@@ -17,5 +17,12 @@
       <jdbc-url>jdbc:postgresql://35.228.184.70:5432/pizza-lair-db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="pizza_lair_db@35.228.184.70" uuid="71e77f9f-2582-42ea-ba36-a269fab7b30b">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://35.228.184.70:5432/pizza_lair_db</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
