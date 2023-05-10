@@ -262,3 +262,36 @@ button {
 .button-container a:hover {
     background-color: white;
 }
+
+.detail {
+    background-color: #ffd9fb75;
+    max-width: 1200px;
+    padding: 50px;
+    margin: 50px;
+    border: 2px solid #FA6BEB;
+    border-radius: 15px;
+}
+h1, h4 {
+    color: #FA6BEB;
+    font-weight: bold;
+}
+
+.pizza-toppings {
+  margin-top: 10px;
+}
+
+.allergens {
+  margin-top: 10px;
+}
+
+.pizza-price {
+  margin-top: 10px;
+}
+
+.add-to-cart {
+  margin-top: 10px;
+}
+
+.pizza-description {
+  margin-top: auto;
+}
