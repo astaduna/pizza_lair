@@ -10,7 +10,7 @@
     <p>{{ pizza.descriptions }}</p>
     <p>{{ pizza.allergens }}</p>
     <p>{{ pizza.product.price }}</p>
+    <a href="{% url 'add_to_cart' product_id=pizza.id %}">Add to Cart</a>
 
-    <button class="add-to-cart" id="add-btn ">Bæta í körfu</button>
 
 {% endblock %}

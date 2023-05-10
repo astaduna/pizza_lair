@@ -1,5 +1,37 @@
 {% extends 'base_main.html' %}
 
 {% block content %}
+{% if added_product %}
+<div class="alert alert-success">
+    {{ added_product.name }} added to cart!
+</div>
+{% endif %}
+
+{% if cartitems %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cartitems %}
+        <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.price }}</td>
+            <td>
+                <a href="{% url 'remove_from_cart' item.id %}" class="btn btn-danger btn-sm">Remove</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-info">
+    Your cart is empty.
+</div>
+{% endif %}
 
 {% endblock %}
