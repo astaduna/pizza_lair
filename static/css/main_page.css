@@ -244,19 +244,16 @@ span.helptext {
     margin: auto;
     text-align: center;
 }
-.spicy,
-.vegan {
-    margin: 20px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #FA6BEB;
-    background-color: white;
-}
-.spicy:hover ,
-.vegan:hover {
-    background-color: #FFD9FB;
-    cursor: pointer;
-}
 button {
     cursor: pointer;
+}
+.button-container a {
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #FA6BEB;
+    background-color: #FFD9FB;
+}
+.button-container a:hover {
+    background-color: white;
 }
