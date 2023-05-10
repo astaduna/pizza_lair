@@ -2,15 +2,28 @@
 {% extends 'base_main.html' %}
 
 {% block content %}
+  <div class="detail">
     {% for pizza_image in pizza.pizzaimage_set.all %}
         <img src="{{ pizza_image.image }}" class="pizza-img">
     {% endfor %}
     <h1>{{ pizza.product.name }}</h1>
-    <p>{{ pizza.toppings }}</p>
-    <p>{{ pizza.descriptions }}</p>
-    <p>{{ pizza.allergens }}</p>
-    <p>{{ pizza.product.price }}</p>
+    <div class="pizza-toppings">
+        <h4>ÁLEGG</h4>
+        {{ pizza.toppings }}
+    </div>
+    <div class="description">
+        {{ pizza.descriptions }}
+    </div>
+    <div class="allergens">
+        <h4>Ofnæmisvaldar</h4>
+        {{ pizza.allergens }}
+    </div>
+    <div class="price">
+        <h4>VERÐ</h4>
+        {{ pizza.product.price }}
+    </div>
 
     <button class="add-to-cart" id="add-btn ">Bæta í körfu</button>
+  </div>
 
 {% endblock %}
