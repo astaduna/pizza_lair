@@ -2,14 +2,15 @@
 {% load static %}
 
 {% block content %}
+    <div class="button-container">
+        <a href="{% url 'pizza-index' %}">STERKAR
+            <img src="{% static 'images/spicy_icon.png'%}" class="spicy-icon">
+        </a>
 
-    <button class="spicy">STERKAR
-        <img src="{% static 'images/spicy_icon.png'%}" class="spicy-icon">
-    </button>
-    <button class="vegan">VEGAN
+    <a href="{% url 'pizza-index' %}">VEGAN
         <img src="{% static 'images/vegan_icon.png'%}" class="vegan-icon">
-    </button>
-
+    </a>
+    </div>
     <div class="pizzas">
         {% for pizza in pizzas %}
             {% include 'pizza/single_pizza.html' with pizza=pizza %}
