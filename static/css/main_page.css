@@ -91,6 +91,7 @@ body {
 .search_container {
     display: flex;
     justify-content: flex-end;
+    min-width: max-content;
   }
 #search_bar {
     width: 150px;
@@ -168,16 +169,17 @@ li {
     padding-top: 70px;
 }
 .pizzas {
-    white-space: nowrap;
     overflow-x: auto;
     margin-top: 70px;
 }
 .pizza {
     display: inline-block;
+    margin: 20px;
 }
 p,
 h2 {
     color: black;
+    width: 350px;
 }
 .drinks {
     padding-top: 80px;
