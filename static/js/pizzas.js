@@ -14,6 +14,7 @@ $(document).ready(function(){
                                        '<img class="pizza-img" src="' + d.firstImage + '"/>' +
                                        '<h4>' + d.name + '</h4>' +
                                        '<p>' + d.descriptions + '</p>' +
+                                        '<p>' + d.price.toFixed() + '</p>' +
                                    '</a>' +
                                '</div>';
                     });

@@ -3,20 +3,19 @@ from pizza.models import Pizza, PizzaType
 from django.http import JsonResponse
 
 
+from django.db.models import F
+
 def index(request):
     order_by = request.GET.get('order_by', 'name')
 
     if order_by == 'name':
-        pizzas = Pizza.objects.all()
-        for pizza in pizzas:
-            print(pizza.product.name)
-        pizzas = sorted(pizzas, key=lambda x: x.product.name)
+        pizzas = Pizza.objects.annotate(product_name=F('product__name')).order_by('product_name')
     elif order_by == 'high_price':
-        pizzas = Pizza.objects.all().order_by('price')
-    elif order_by == 'low_price':
-        pizzas = Pizza.objects.all().order_by('price')
+        pizzas = Pizza.objects.annotate(product_price=F('product__price')).order_by('-product_price')
+    elif order_by == 'price':
+        pizzas = Pizza.objects.annotate(product_price=F('product__price')).order_by('product_price')
     else:
-        pizzas = Pizza.objects.all().order_by('id')
+        pizzas = Pizza.objects.all()
 
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
@@ -25,10 +24,10 @@ def index(request):
             'name': x.product.name,
             'toppings': x.toppings,
             'descriptions': x.descriptions,
-            'small_price': x.price,
+            'price': x.product.price,
             'firstImage': x.pizzaimage_set.first().image
 
-        } for x in pizzas.filter(name__icontains=search_filter)]
+        } for x in pizzas.filter(product__name__icontains=search_filter)]
         return JsonResponse({'data': pizzas})
 
     context = {
@@ -41,7 +40,6 @@ def get_pizza_by_id(request, id):
     return render(request, 'pizza/pizza_detail.html', {
         'pizza': get_object_or_404(Pizza, pk=id)
     })
-
 
 def get_pizza_by_type(request, type_id):
     if type_id:

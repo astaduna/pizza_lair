@@ -1,0 +1,14 @@
+{% extends 'base_main.html' %}
+
+{% block content %}
+    {% for side_image in side.sideimage_set.all %}
+        <img src="{{ side_image.image }}" class="side-img">
+    {% endfor %}
+    <h1>{{ side.product.name }}</h1>
+    <p>{{ side.description }}</p>
+    <p>{{ side.allergens }}</p>
+    <p>{{ side.product.price }}</p>
+
+    <button class="add-to-cart" id="add-btn ">Bæta í körfu</button>
+
+{% endblock %}

@@ -1,10 +1,8 @@
 <div class="side">
-    <a href="#">
+    <a href="/sides/{{ side.id }}">
         <img class="side-img" src="{{ side.sideimage_set.first.image }}"/>
-        <h2>{{ side.name }}</h2>
+        <h2>{{ side.product.name }}</h2>
         <p>{{ side.description }}</p>
-        <p>{{ side.price }}</p>
-        <p>{{ side.allergens }}</p>
-        <button class="add-to-cart">Bæta í körfu</button>
+        <p>{{ side.product.price }}</p>
     </a>
 </div>

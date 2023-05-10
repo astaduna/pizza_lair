@@ -5,11 +5,11 @@
     {% for pizza_image in pizza.pizzaimage_set.all %}
         <img src="{{ pizza_image.image }}" class="pizza-img">
     {% endfor %}
-    <h1>{{ pizza.name }}</h1>
+    <h1>{{ pizza.product.name }}</h1>
     <p>{{ pizza.toppings }}</p>
     <p>{{ pizza.descriptions }}</p>
     <p>{{ pizza.allergens }}</p>
-    <p>{{ pizza.price }}</p>
+    <p>{{ pizza.product.price }}</p>
 
     <button class="add-to-cart" id="add-btn ">Bæta í körfu</button>
 
