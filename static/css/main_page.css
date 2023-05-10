@@ -168,11 +168,16 @@ li {
     padding-top: 70px;
 }
 .pizzas {
-    display: flex;
+    white-space: nowrap;
+    overflow-x: auto;
+    margin-top: 70px;
+}
+.pizza {
     display: inline-block;
 }
-.pizza p{
-    color:black;
+p,
+h2 {
+    color: black;
 }
 .drinks {
     padding-top: 80px;

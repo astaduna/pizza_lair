@@ -16,3 +16,4 @@ def add_to_cart(request):
         price = p.price
         Cart(product=product_name, price=price).save()
         return redirect('pizza/pizza_menu.html')
+
