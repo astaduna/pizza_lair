@@ -9,9 +9,7 @@ class Pizza(models.Model):
     toppings = models.CharField(max_length=255, blank=True)
     descriptions = models.CharField(max_length=255, blank=True)
     type = models.ForeignKey(PizzaType, on_delete=models.CASCADE)
-    small_price = models.IntegerField(default=True)
-    medium_price = models.IntegerField(default=True)
-    large_price = models.IntegerField(default=True)
+    price = models.IntegerField(default=True)
     allergens = models.CharField(max_length=255, blank=True)
 
 class PizzaImage(models.Model):
