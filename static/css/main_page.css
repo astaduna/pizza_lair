@@ -181,6 +181,10 @@ h2 {
     color: black;
     width: 350px;
 }
+
+h2 {
+    color: hotpink;
+}
 .drinks {
     padding-top: 80px;
     display: flex;
@@ -296,4 +300,13 @@ h1, h4 {
 
 .pizza-description {
   margin-top: auto;
+}
+
+.offers {
+    overflow-x: auto;
+    margin-top: 70px;
+}
+.offer {
+    display: inline-block;
+    margin: 20px;
 }
