@@ -3,17 +3,15 @@ from pizza.models import Pizza, PizzaType
 from django.http import JsonResponse
 
 
-from django.db.models import F
-
 def index(request):
     order_by = request.GET.get('order_by', 'name')
 
     if order_by == 'name':
-        pizzas = Pizza.objects.annotate(product_name=F('product__name')).order_by('product_name')
+        pizzas = Pizza.objects.order_by('product__name')
     elif order_by == 'high_price':
-        pizzas = Pizza.objects.annotate(product_price=F('product__price')).order_by('-product_price')
+        pizzas = Pizza.objects.order_by('-product__price')
     elif order_by == 'price':
-        pizzas = Pizza.objects.annotate(product_price=F('product__price')).order_by('product_price')
+        pizzas = Pizza.objects.order_by('product__price')
     else:
         pizzas = Pizza.objects.all()
 
