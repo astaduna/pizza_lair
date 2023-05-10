@@ -9,9 +9,9 @@ def index(request):
     if order_by == 'name':
         pizzas = Pizza.objects.all().order_by('name')
     elif order_by == 'high_price':
-        pizzas = Pizza.objects.all().order_by('-large_price')
+        pizzas = Pizza.objects.all().order_by('price')
     elif order_by == 'low_price':
-        pizzas = Pizza.objects.all().order_by('large_price')
+        pizzas = Pizza.objects.all().order_by('price')
     else:
         pizzas = Pizza.objects.all().order_by('id')
 
@@ -22,9 +22,7 @@ def index(request):
             'name': x.name,
             'toppings': x.toppings,
             'descriptions': x.descriptions,
-            'small_price': x.small_price,
-            'medium_price': x.medium_price,
-            'large_price': x.large_price,
+            'small_price': x.price,
             'firstImage': x.pizzaimage_set.first().image
 
         } for x in pizzas.filter(name__icontains=search_filter)]
