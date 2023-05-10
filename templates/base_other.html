@@ -28,31 +28,6 @@
                     </div>
                 </div>
             </div>
-        <nav>
-            <div class="nav_bar">
-                <div class="inner_nav">
-                    <ul class="nav_links">
-                        <li><a href="{% url 'pizza-index' %}">PIZZA<img src="{% static 'images/pizza_icon.png'%}" id="pizza_icon"></a></li>
-                        <li><a href="{% url 'sides-index' %}">MEÐLÆTI<img src="{% static 'images/side_icon.png'%}" id="side_icon"></a></li>
-                        <li><a href="{% url 'offers-index' %}">TILBOÐ<img src="{% static 'images/offer_icon.png'%}" id="offer_icon"></a></li>
-                        <li><a href="{% url 'drinks-index' %}">DRYKKIR<img src="{% static 'images/cocacola.png'%}" id="cocacola"></a></li>
-                        <li><a href="{% url 'sauces-index' %}">SÓSUR<img src="{% static 'images/sauce_icon.png'%}" id="sauce_icon"></a></li>
-                    </ul>
-                    <div class="search_container">
-                    <form method="GET">
-                        <input type="text" placeholder="Leita.." id="search_bar">
-
-                        <select name="order_by" id="order_by">
-                            <option value="name" {% if order_by == 'name' %}selected{% endif %}>Nafn</option>
-                            <option value="high_price" {% if order_by == 'high_price' %}selected{% endif %}>Verð (hæðsta verð)</option>
-                            <option value="low_price" {% if order_by == 'low_price' %}selected{% endif %}>Verð (lægsta verð)</option>
-                        </select>
-                        <button type="submit">Leita</button>
-                    </form>
-                    </div>
-                </div>
-            </div>
-        </nav>
             {%  block content %}
             {% endblock %}
         </div>

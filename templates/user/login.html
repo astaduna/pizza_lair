@@ -1,8 +1,12 @@
-{% extends "base_main.html" %}
+{% extends "base_other.html" %}
 {% block content %}
+    <br>
+    <br>
+    <div class="form_container">
     <form method="post" class='form form horizontal'>
         {% csrf_token %}
         {{ form }}
         <input type="submit" class="btn btn-primary" value="Login"/>
     </form>
+    </div>
 {% endblock %}
