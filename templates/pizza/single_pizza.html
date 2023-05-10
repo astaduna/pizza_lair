@@ -1,10 +1,10 @@
 <div class="pizza">
     <a href="/pizzas/{{ pizza.id }}">
         <img class="pizza-img" src="{{ pizza.pizzaimage_set.first.image }}"/>
-        <h2>{{ pizza.name }}</h2>
+        <h2>{{ pizza.product.name }}</h2>
         <p>{{ pizza.toppings }}</p>
         <div class="pizza-size">
-            <p>{{ pizza.price }}</p>
+            <p>{{ pizza.product.price }}</p>
         </div>
     </a>
 </div>

@@ -8,7 +8,7 @@ class PizzaType(models.Model):
 
 class Pizza(models.Model):
     toppings = models.CharField(max_length=255, blank=True)
-    descriptions = models.CharField(max_length=255, blank=True)
+    descriptions = models.CharField(max_length=999, blank=True)
     type = models.ForeignKey(PizzaType, on_delete=models.CASCADE)
     allergens = models.CharField(max_length=255, blank=True)
     product = models.OneToOneField(Product, on_delete=models.CASCADE)
