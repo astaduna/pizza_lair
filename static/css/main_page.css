@@ -357,7 +357,7 @@ td a {
     padding: 8px;
     background-color:#FFD9FB;
     border-radius: 10px;
-    border 0.1px solid #FA6BEB;
+    border:0.1px solid #FA6BEB;
     color: black;
 }
 td a:hover {
@@ -366,4 +366,15 @@ td a:hover {
 .shopping-cart p {
     padding: 20px;
     font-weight: bold;
+}
+
+
+.login-cart-container {
+    display: flex;
+    gap: 10px;
+}
+
+.profile-img {
+    max-width: 30px;
+    border-radius: 50%;
 }
