@@ -18,7 +18,7 @@ def index(request):
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
         pizzas = [{
-            'id': x.product_id,
+            'id': x.product.id,
             'name': x.product.name,
             'toppings': x.toppings,
             'descriptions': x.descriptions,
