@@ -18,7 +18,7 @@ def index(request):
     if 'search_filter' in request.GET:
         search_filter = request.GET['search_filter']
         pizzas = [{
-            'id': x.product_id,
+            'id': x.product.id,
             'name': x.product.name,
             'toppings': x.toppings,
             'descriptions': x.descriptions,
@@ -34,9 +34,9 @@ def index(request):
     }
     return render(request, 'pizza/pizza_menu.html', context)
 
-def get_pizza_by_id(request, product_id):
+def get_pizza_by_id(request, id):
     return render(request, 'pizza/pizza_detail.html', {
-        'pizza': get_object_or_404(Pizza, pk=product_id)
+        'pizza': get_object_or_404(Pizza, pk=id)
     })
 
 def get_pizza_by_type(request, type_id):
