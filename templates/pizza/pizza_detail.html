@@ -1,4 +1,3 @@
-
 {% extends 'base_main.html' %}
 
 {% block content %}
@@ -22,8 +21,8 @@
         <h4>VERÐ</h4>
         {{ pizza.product.price }}
     </div>
-
-    <button class="add-to-cart" id="add-btn ">Bæta í körfu</button>
+  <br>
+  <a id="add-cart-button" href="{% url 'add_to_cart' product_id=pizza.id %}">Bæta í körfu</a>
   </div>
 
-{% endblock %}
+  {% endblock %}

@@ -312,6 +312,7 @@ h1, h4 {
 }
 
 
+
 .profile-img {
     max-width: 30px;
     border-radius: 50%;
@@ -328,4 +329,17 @@ h1, h4 {
     width: 20%;
     height: 30%;
     border: pink;
+}
+
+#add-cart-button  {
+    padding: 10px;
+    margin-left: 100px;
+    border-radius: 10px;
+    border: 1px solid #FA6BEB;
+    background-color: #FFD9FB;
+    color: black;
+}
+#add-cart-button:hover {
+    background-color: white;
+
 }
