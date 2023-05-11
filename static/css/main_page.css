@@ -310,3 +310,22 @@ h1, h4 {
     display: inline-block;
     margin: 20px;
 }
+
+
+.profile-img {
+    max-width: 30px;
+    border-radius: 50%;
+}
+
+
+.login-cart-container {
+    display:flex;
+    gap: 20px;
+}
+
+
+#id_country {
+    width: 20%;
+    height: 30%;
+    border: pink;
+}

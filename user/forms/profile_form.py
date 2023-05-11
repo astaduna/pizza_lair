@@ -1,19 +1,24 @@
-from django.forms import ModelForm, widgets
+
 from user.models import Profile
+from django import forms
 
 
-class ProfileForm(ModelForm):
+class ProfileForm(forms.ModelForm):
+    COUNTRY_CHOICES = (
+        ('ISK', 'Ísland'),
+        ('DEN', 'Danmörk'),
+        ('ENG', 'England'),
+    )
+    country = forms.ChoiceField(choices=COUNTRY_CHOICES, widget=forms.Select(attrs={'class': 'form-control'}))
+
     class Meta:
         model = Profile
-        exclude = [ 'id', 'user' ]
+        exclude = ['id', 'user']
         widgets = {
-            'name': widgets.TextInput(attrs={ 'class': 'form-control' }),
-            'address': widgets.TextInput(attrs={'class': 'form-control'}),
-            'house_number': widgets.TextInput(attrs={'class': 'form-control'}),
-            'city': widgets.TextInput(attrs={'class': 'form-control'}),
-            'country': widgets.Select(attrs={'class': 'form-control'}),
-            'zip': widgets.TextInput(attrs={'class': 'form-control'}),
-            'profile_image': widgets.TextInput(attrs={ 'class': 'form-control' })
-
-
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'address': forms.TextInput(attrs={'class': 'form-control'}),
+            'house_number': forms.TextInput(attrs={'class': 'form-control'}),
+            'city': forms.TextInput(attrs={'class': 'form-control'}),
+            'zip': forms.TextInput(attrs={'class': 'form-control'}),
+            'profile_image': forms.TextInput(attrs={'class': 'form-control'})
         }
