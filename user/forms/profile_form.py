@@ -13,10 +13,11 @@ class ProfileForm(forms.ModelForm):
 
     class Meta:
         model = Profile
-        exclude = ['id', 'user', 'house_number']
+        exclude = ['id', 'user']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control'}),
             'address': forms.TextInput(attrs={'class': 'form-control'}),
+            'house_number': forms.TextInput(attrs={'class': 'form-control'}),
             'city': forms.TextInput(attrs={'class': 'form-control'}),
             'zip': forms.TextInput(attrs={'class': 'form-control'}),
             'profile_image': forms.TextInput(attrs={'class': 'form-control'})
