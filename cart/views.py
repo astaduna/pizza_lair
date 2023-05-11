@@ -1,11 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Product
-
-def index(request):
-    context = {'Product': Product.objects.all().order_by('id')}
-    return render(request, 'cart/cart.html', context)
-
+from django.urls import reverse
 
 def add_to_cart(request, product_id):
     if 'cart' not in request.session:
@@ -25,24 +21,30 @@ def add_to_cart(request, product_id):
 
     context = {'cartitems': cart_items, 'added_product': product}
     return render(request, 'cart/cart.html', context)
+
 def view_cart(request):
     cart = request.session.get('cart', [])
     products_in_cart = []
+    total_price = 0
     for prod_id in cart:
         prod = Product.objects.get(id=prod_id)
         products_in_cart.append(prod)
-    context = {'cartitems': products_in_cart}
+        total_price += int(prod.price)
+
+    context = {'cartitems': products_in_cart, 'total_price': total_price}
     return render(request, 'cart/cart.html', context)
 
 
 def remove_from_cart(request, product_id):
     if 'cart' not in request.session:
         return redirect('view_cart')
-    try:
-        request.session['cart'].remove(product_id)
-        messages.success(request, 'Product removed from cart')
-    except ValueError:
-        pass
+
+    cart = request.session['cart']
+    new_cart = [item for item in cart if item != product_id]
+    request.session['cart'] = new_cart
+    request.session.modified = True
+
+    messages.success(request, 'Product removed from cart')
     return redirect('view_cart')
 
 
