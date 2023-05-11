@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
+import order.apps
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -46,7 +47,8 @@ INSTALLED_APPS = [
     'offers.apps.OffersConfig',
     'product.apps.ProductConfig',
     'sauces.apps.SaucesConfig',
-    'cart.apps.CartConfig'
+    'cart.apps.CartConfig',
+    'order.apps.OrderConfig',
 
 ]
 
