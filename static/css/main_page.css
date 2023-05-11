@@ -321,3 +321,49 @@ h1, h4 {
 #add-cart-button:hover {
     background-color: white;
 }
+
+.shopping-cart {
+    background-color: #ffd9fb75;
+    max-width: 1200px;
+    padding: 50px;
+    margin: 30px;
+    border: 2px solid #FA6BEB;
+    border-radius: 15px;
+}
+.alert-success {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    color: white;
+    -webkit-text-stroke: 0.5px #FA6BEB;
+}
+.clear-cart-container button {
+    margin-top: 80px;
+    margin-left: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #FA6BEB;
+    background-color: #FFD9FB;
+    color: black;
+}
+.clear-cart-container button:hover {
+    background-color: white;
+}
+
+td {
+    padding: 2px 7px;
+}
+td a {
+    pidding: 8px;
+    background-color:#FFD9FB;
+    border-radius: 10px;
+    border 0.1px solid #FA6BEB;
+    color: black;
+}
+td a:hover {
+    background-color: white;
+}
+.shopping-cart p {
+    padding: 20px;
+    font-weight: bold;
+}
