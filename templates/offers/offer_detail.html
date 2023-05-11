@@ -13,8 +13,7 @@
         <h4>VERÐ</h4>
         {{ offer.product.price }}
     </div>
-
-    <button class="add-to-cart" id="add-btn ">Bæta í körfu</button>
+    <a id="add-cart-button" href="{% url 'add_to_cart' product_id=offer.product_id %}">Bæta í körfu</a>
   </div>
 
 {% endblock %}

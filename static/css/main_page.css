@@ -186,16 +186,16 @@ h2 {
     color: hotpink;
 }
 .drinks {
-    padding-top: 80px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     margin-left: 10%;
 }
+.drink {
+    padding-top: 50px;
+}
 .sauce {
     padding-top: 80px;
-    display: flex;
-    flex-wrap: wrap;
     gap: 20px;
     margin-left: 10%;
 }

@@ -35,11 +35,13 @@
         {% csrf_token %}
         <button type="submit" class="btn btn-primary">Tæma körfu</button>
     </form>
+    <a href="{% url 'checkout' %}" class="btn btn-success">Áfram í borgun</a>
  </div>
 {% else %}
 <div class="alert alert-info">
     Karfan þín er tóm.
 </div>
 {% endif %}
+
 </div>
 {% endblock %}
