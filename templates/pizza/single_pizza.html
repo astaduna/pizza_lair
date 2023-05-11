@@ -3,7 +3,8 @@
         <img class="pizza-img" src="{{ pizza.pizzaimage_set.first.image }}"/>
         <h2>{{ pizza.product.name }}</h2>
         <p>{{ pizza.toppings }}</p>
-        <div class="pizza-size">
+        <div class="price">
+            <p>Verð</p>
             <p>{{ pizza.product.price }}</p>
         </div>
     </a>
