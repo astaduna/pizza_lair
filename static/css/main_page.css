@@ -310,3 +310,14 @@ h1, h4 {
     display: inline-block;
     margin: 20px;
 }
+#add-cart-button  {
+    padding: 10px;
+    margin-left: 100px;
+    border-radius: 10px;
+    border: 1px solid #FA6BEB;
+    background-color: #FFD9FB;
+    color: black;
+}
+#add-cart-button:hover {
+    background-color: white;
+}
