@@ -1,7 +1,6 @@
 <div class="drink">
         <img class="drink-img" src="{{ drink.drinkimage_set.first.image }}"/>
         <h2>{{ drink.product.name }}</h2>
-        <p>Verð</p>
-        <p>{{ drink.product.price }}</p>
+        <p>Verð: {{ drink.product.price }}</p>
     <a id="add-cart-button" href="{% url 'add_to_cart' product_id=drink.product_id %}">Bæta í körfu</a>
 </div>

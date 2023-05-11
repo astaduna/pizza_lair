@@ -2,9 +2,8 @@
     <a href="#">
         <img class="drink-img" src="{{ sauce.sauceimage_set.first.image }}"/>
         <h2>{{ sauce.product.name }}</h2>
-        <p>Verð</p>
-        <p>{{ sauce.product.price }}</p>
-        <a id="add-cart-button" href="{% url 'add_to_cart' product_id=sauces.product_id %}">Bæta í körfu</a>
+        <p>Verð: {{ sauce.product.price }}</p>
+        <a id="add-cart-button" href="{% url 'add_to_cart' product_id=sauce.product_id %}">Bæta í körfu</a>
 
     </a>
 </div>
