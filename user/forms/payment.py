@@ -1,4 +1,3 @@
-
 from user.models import Profile
 from django import forms
 
