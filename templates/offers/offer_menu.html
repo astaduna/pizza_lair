@@ -1,5 +1,9 @@
 {% extends 'base_main.html' %}
 {% block content %}
-
+    <div class="offers">
+        {% for offer in offers %}
+            {% include 'offers/single_offer.html' with offer=offer %}
+        {% endfor %}
+    </div>
 
 {% endblock %}

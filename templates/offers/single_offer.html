@@ -1,0 +1,8 @@
+<div class="offer">
+    <a href="/offers/{{ offer.id }}">
+        <img class="offer-img" src="{{ offer.offerimage_set.first.image }}"/>
+        <h2>{{ offer.product.name }}</h2>
+        <p>Verð</p>
+        <p>{{ offer.product.price }}</p>
+    </a>
+</div>
