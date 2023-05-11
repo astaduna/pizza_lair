@@ -1,23 +1,15 @@
+
 from user.models import Profile
 from django import forms
 
 
-class ProfileForm(forms.ModelForm):
-    COUNTRY_CHOICES = (
-        ('ISK', 'Ísland'),
-        ('DEN', 'Danmörk'),
-        ('ENG', 'England'),
-    )
-    country = forms.ChoiceField(choices=COUNTRY_CHOICES, widget=forms.Select(attrs={'class': 'form-control'}))
-
+class CheckoutProfileInfo(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ['id', 'user']
+        exclude = ['id', 'user', 'profile_image', 'country']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control'}),
             'address': forms.TextInput(attrs={'class': 'form-control'}),
-            'house_number': forms.TextInput(attrs={'class': 'form-control'}),
             'city': forms.TextInput(attrs={'class': 'form-control'}),
             'zip': forms.TextInput(attrs={'class': 'form-control'}),
-            'profile_image': forms.TextInput(attrs={'class': 'form-control'})
         }

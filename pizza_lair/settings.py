@@ -49,7 +49,6 @@ INSTALLED_APPS = [
     'sauces.apps.SaucesConfig',
     'cart.apps.CartConfig',
     'order.apps.OrderConfig',
-
 ]
 
 MIDDLEWARE = [
