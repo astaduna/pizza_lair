@@ -378,3 +378,37 @@ td a:hover {
     max-width: 30px;
     border-radius: 50%;
 }
+.pay-on-site, .card-info-btn, .continue, .go-back {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #FA6BEB;
+    background-color: #FFD9FB;
+    color: black;
+}
+
+.pay-on-site:hover, .card-info-btn:hover, .continue:hover, .go-back:hover {
+    background-color: white;
+}
+
+.order-summary-container, .payment-container, .profile-container {
+    text-align: center;
+    position: absolute;
+    padding: 40px;
+    background-color: white;
+    border: 1px solid #f802dd;
+    border-radius: 10px;
+    margin-left: 35%;
+    top: 180px;
+    box-shadow: 6px 6px 6px grey;
+}
+.confirmed-order {
+    text-align: center;
+    position: absolute;
+    padding: 100px;
+    background-color: white;
+    border: 1px solid #f802dd;
+    border-radius: 10px;
+    margin-left: 30%;
+    top: 180px;
+    box-shadow: 6px 6px 6px grey;
+}

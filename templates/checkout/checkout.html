@@ -1,11 +1,14 @@
 {% extends 'base_other.html' %}
 {% block content %}
-    <h1>Profile</h1>
-    <form class="form form-horizantal" method="post">
-        {% csrf_token %}
-        {{ form }}
-    <input type="submit" class="btn btn-primary" value="Continue"/>
-    </form>
+    <div class="profile-container">
+        <h2 class="profile-header">Profile</h2><br>
+        <form class="form form-horizantal" method="post">
+            {% csrf_token %}
+            {{ form }}
+        <a href="{% url 'payment' %}" class="continue">Halda áfram í greiðsluferlið</a><br>
+            <a href="{% url 'view_cart' %}" class="go-back">Til baka</a>
+        </form>
+    </div>
 
 
 {% endblock %}
