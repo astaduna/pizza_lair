@@ -23,12 +23,15 @@
                         <tr>
                             <td>{{ item.product.name }}</td>
                             <td>{{ item.quantity }}</td>
-                            <td>{{ item.product.price }}</td>
                             <td>
-                                {% if item.product.id %}
-                                    <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger btn-sm">Eyða</a>
-                                {% endif %}
-                            </td>
+                            <form action="{% url 'update_cart' product_id=item.product.id %}" method="POST">
+                                {% csrf_token %}
+                                <input type="number" name="quantity" value="{{ cart_item.quantity }}" min="1" required>
+                                <button type="submit">Update</button>
+                            </form>
+                        </td>
+                            <td>{{ item.product.price }}</td>
+
                         </tr>
                     {% endfor %}
                 </tbody>
