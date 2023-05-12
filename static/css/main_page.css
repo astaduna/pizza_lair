@@ -420,6 +420,7 @@ a.go-to-checkout {
     border-radius: 10px;
     box-shadow: 6px 6px 6px grey;
     margin-left: 150px;
-
-
+}
+input[type="number"] {
+    width: 35px;
 }
