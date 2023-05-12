@@ -26,9 +26,15 @@ def profile(request):
 
 
 def payment(request):
-    form = CheckoutPaymentForm()
+    payment = CheckoutPaymentForm()
+    if request.method == 'POST':
+        if payment.is_valid():
+            payment = form.save(commit=False)
+            payment.user = request.user
+            payment.save()
+        return render(redirect('confirm-payed-order'))
     return render(request, 'checkout/checkout_2.html',
-                  {'form': form})
+                  {'form': payment})
 
 
 
@@ -38,7 +44,7 @@ def summary(request):
 
     cart_items = []
     total_price = 0
-    cart = request.session.get('cart', [])
+    cart = request.session.get('cart', {})
     for prod_id in cart:
         prod = Product.objects.get(id=prod_id)
         cart_items.append(prod)
@@ -50,8 +56,6 @@ def summary(request):
         'total_price': total_price,
     }
 
-    return render(request, 'checkout/order_summary_payed.html', context)
-
 
 @login_required
 def create_order_payed(request):
@@ -59,8 +63,13 @@ def create_order_payed(request):
     order.user = request.user
     order.is_paid = True
     order.save()
+    my_products = []
+    print("asdfdsfasdf")
+    print(request.session['cart'])
     for id in request.session['cart']:
+        print(id)
         item = Product.objects.filter(pk=id).first()
+        my_products.append(item)
         order_item = OrderItem()
         order_item.order = order
         order_item.product = item
@@ -69,7 +78,9 @@ def create_order_payed(request):
 
 
 
-    return render(request, 'checkout/order_summary_payed.html', {})
+
+
+    return render(request, 'checkout/order_summary.html', {"items": my_products})
 
 def create_order_unpayed(request):
     order = Order()
@@ -86,4 +97,4 @@ def create_order_unpayed(request):
 
 
 
-    return render(request, 'checkout/order_summary_not_payed.html', {})
+    return render(request, 'checkout/order_summary.html', {})
