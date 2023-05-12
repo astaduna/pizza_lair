@@ -20,6 +20,7 @@ def add_to_cart(request, product_id):
 
 
 def view_cart(request):
+
     cart_items = []
     total_price = 0
     if 'cart' in request.session:

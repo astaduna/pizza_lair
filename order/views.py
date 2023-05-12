@@ -4,6 +4,7 @@ from user.models import Profile
 from user.forms.checkout import CheckoutProfileInfo, CheckoutPaymentForm
 from django.contrib.auth.decorators import login_required
 from cart.models import Product
+from django.shortcuts import render
 
 
 
@@ -28,8 +29,6 @@ def payment(request):
     form = CheckoutPaymentForm()
     return render(request, 'checkout/checkout_2.html',
                   {'form': form})
-
-
 
 @login_required
 def summary(request):
