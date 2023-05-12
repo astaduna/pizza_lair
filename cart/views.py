@@ -22,13 +22,12 @@ def add_to_cart(request, product_id):
     context = {'cartitems': cart_items, 'added_product': product}
     return render(request, 'cart/cart.html', context)
 
-def update_cart(request, product_id):
-    print(product_id)
+def update_cart(request, product_id, cart_item_index=None):
     if 'cart' not in request.session:
         return redirect('view_cart')
     try:
         cart = request.session['cart']
-        quantity = int(request.POST['quantity'])
+        quantity = int(request.GET.get('quantity'))
         if quantity > 0:
             cart[product_id] = quantity
         else:
@@ -37,6 +36,7 @@ def update_cart(request, product_id):
     except (KeyError, ValueError):
         pass
     return redirect('view_cart')
+
 def view_cart(request):
     cart = request.session.get('cart', [])
     products_in_cart = []
