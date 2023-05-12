@@ -50,11 +50,11 @@ def summary(request):
         'total_price': total_price,
     }
 
-    return render(request, 'checkout/order_summary.html', context)
+    return render(request, 'checkout/order_summary_payed.html', context)
 
 
 @login_required
-def create_order(request):
+def create_order_payed(request):
     order = Order()
     order.user = request.user
     order.is_paid = True
@@ -69,9 +69,9 @@ def create_order(request):
 
 
 
-    return render(request, 'checkout/confirm_order.html', {})
+    return render(request, 'checkout/order_summary_payed.html', {})
 
-def create_pick_up_order(request):
+def create_order_unpayed(request):
     order = Order()
     order.user = request.user
     order.is_paid = False
@@ -86,4 +86,4 @@ def create_pick_up_order(request):
 
 
 
-    return render(request, 'checkout/confirm_order.html', {})
+    return render(request, 'checkout/order_summary_not_payed.html', {})
