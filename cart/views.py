@@ -39,12 +39,22 @@ def update_cart(request, product_id):
         quantity = int(request.POST['quantity'])
         if quantity > 0:
             cart[product_id] = quantity
-        else:
-            del cart[product_id]
         request.session.modified = True
     except (KeyError, ValueError):
         pass
     return redirect('view_cart')
+
+def remove_from_cart(request, product_id):
+    if 'cart' in request.session:
+        key = str(product_id)
+    try:
+        if key in request.session['cart']:
+                del request.session['cart'][key]
+                request.session.modified = True
+                messages.success(request, 'Product removed from cart')
+    except (KeyError, ValueError):
+        pass
+    return redirect(reverse('view_cart'))
 
 
 def clear_cart(request):

@@ -412,14 +412,18 @@ td a:hover {
     top: 180px;
     box-shadow: 6px 6px 6px grey;
 }
+.clear-cart-container {
+    display: flex;
+}
 a.go-to-checkout {
+    height: 30px;
     color: black;
     padding: 20px;
     background-color: white;
     border: 1px solid #f802dd;
     border-radius: 10px;
     box-shadow: 6px 6px 6px grey;
-    margin-left: 150px;
+    margin-left: 200px;
 }
 input[type="number"] {
     width: 35px;
