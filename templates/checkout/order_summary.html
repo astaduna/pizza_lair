@@ -1,52 +1,43 @@
 {% extends 'base_other.html' %}
 
 {% block content %}
-    <div class="step-banner">
-        <div class="step-profile"><a href="{% url 'checkout' %}">PRÓFÍLL</a></div>
-        <div class="step-place"><a href="{% url 'place' %}">STAÐIR</a></div>
-        <div class="step-payment"><a href="{% url 'payment' %}">GREIÐSLA</a></div>
-        <div class="step-summary"><a href="{% url 'order-summary' %}">(YFIRLIT PÖNTUN)</a></div>
-        <div class="step-confirm">STAÐFESTING</div>
-    </div>
-    <div class="order-summary-container">
-      <h1>Order Summary</h1>
+  <div class="order-summary-container">
+    <h1>Yfirlit á pöntun:</h1>
 
-  <form method="post" action="{% url 'confirm-order' %}">
-    {% csrf_token %}
+    <form method="post" action="{% url 'confirm-order' %}">
+      {% csrf_token %}
 
-    {% if profile %}
-      <h2>Profile Information</h2>
-      <ul>
-        <p>Name: {{ profile.name }}</p>
-        <p>Address: {{ profile.address }}</p>
-        <p>City: {{ profile.city }}</p>
-        <p>Country: {{ profile.country }}</p>
-        <p>Zip: {{ profile.zip }}</p>
-      </ul>
-    {% endif %}
+      {% if profile %}
+        <h2>Profile Information</h2>
+        <ul>
+          <p>Nafn: {{ profile.name }}</p>
+          <p>Heimilisfang: {{ profile.address }}</p>
+          <p>Borg/bær: {{ profile.city }}</p>
+          <p>Land: {{ profile.country }}</p>
+          <p>Póstnúmer: {{ profile.zip }}</p>
+        </ul>
+      {% endif %}
 
-    <h2>Order Items</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Product Name</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in cart_items %}
+      <h2>Pöntunin þín:</h2>
+      <table>
+        <thead>
           <tr>
-            <td>{{ item.name }}</td>
-            <td>{{ item.price }}</td>
+            <th>Vara</th>
+            <th>Verð</th>
           </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {% for item in items %}
+            <tr>
+              <td>{{ item.name }}</td>
+              <td>{{ item.price }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
 
-    <h3>Total Price: {{ total_price }}</h3>
-    <button type="submit">Staðfesta pöntun</button>
-  </form>
-    </div>
-
+      <h3>Samtals: {{ total_price }}</h3>
+      <input type="submit" class="btn btn-primary" value="Staðfesta pöntun" onclick="location.href='{% url 'confirm-order' %}'; return false;"/><br>
+    </form>
+  </div>
 {% endblock %}
-
