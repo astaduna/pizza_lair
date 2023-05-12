@@ -18,6 +18,7 @@ def add_to_cart(request, product_id):
 
     return redirect(reverse('view_cart'))
 
+
 def view_cart(request):
     cart_items = []
     total_price = 0
@@ -44,16 +45,17 @@ def update_cart(request, product_id):
         pass
     return redirect('view_cart')
 
+
 def remove_from_cart(request, product_id):
     if 'cart' in request.session:
         key = str(product_id)
-    try:
-        if key in request.session['cart']:
+        try:
+            if key in request.session['cart']:
                 del request.session['cart'][key]
                 request.session.modified = True
                 messages.success(request, 'Product removed from cart')
-    except (KeyError, ValueError):
-        pass
+        except (KeyError, ValueError):
+            pass
     return redirect(reverse('view_cart'))
 
 

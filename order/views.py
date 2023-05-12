@@ -3,7 +3,6 @@ from order.models import Order, OrderItem
 from user.models import Profile
 from user.forms.checkout import CheckoutProfileInfo, CheckoutPaymentForm
 from django.contrib.auth.decorators import login_required
-from django.urls import reverse
 from cart.models import Product
 
 
