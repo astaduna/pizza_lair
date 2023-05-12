@@ -4,7 +4,6 @@ from user.models import Profile
 from user.forms.checkout import CheckoutProfileInfo, CheckoutPaymentForm
 from django.contrib.auth.decorators import login_required
 from cart.models import Product
-from django.shortcuts import render
 
 
 
@@ -28,80 +27,59 @@ def profile(request):
 def payment(request):
     payment = CheckoutPaymentForm()
     if request.method == 'POST':
-        if payment.is_valid():
-            payment = form.save(commit=False)
-            payment.user = request.user
-            payment.save()
-        return render(redirect('confirm-payed-order'))
-    return render(request, 'checkout/checkout_2.html',
-                  {'form': payment})
+        return redirect('confirm-payed-order')
+    else:
+        return render(request, 'checkout/checkout_2.html', {'form': payment})
 
 
 @login_required
 def summary(request):
     profile = Profile.objects.filter(user=request.user).first()
+
     cart_items = []
-    total_price = 0
-    for prod_id, quantity in request.session['cart'].items():
+    cart_total_price = 0
+    cart = request.session.get('cart', {})
+    for prod_id, quantity in cart.items():
         prod = Product.objects.get(id=prod_id)
-        price = quantity * int(prod.price)
-        cart_items.append({'product': prod, 'quantity': quantity, 'price': price})
-        total_price += price
+        item_total_price = quantity * int(prod.price)
+        cart_total_price += item_total_price
+        cart_items.append({'product': prod, 'quantity': quantity, 'item_total_price': item_total_price})
 
     context = {
         'profile': profile,
-        'items': cart_items,
-        'total_price': total_price,
+        'cart_items': cart_items,
+        'cart_total_price': cart_total_price,
     }
-    print(context)
-    return render(request, 'checkout/order_summary.html', context)
-
-@login_required
-def create_order_paid(request):
-    order = Order()
-    order.user = request.user
-    order.is_paid = True
-    order.save()
-    order_items = []
-    total_price = 0
-    for prod_id, quantity in request.session['cart'].items():
-        prod = Product.objects.get(id=prod_id)
-        price = quantity * int(prod.price)
-        total_price += price
-        order_item = OrderItem()
-        order_item.order = order
-        order_item.product = prod
-        order_item.quantity = quantity
-        order_item.price = prod.price
-        order_item.save()
-        order_items.append({'product': prod, 'quantity': quantity, 'price': price})
-    order.total_price = total_price
-    order.save()
     request.session['cart'] = {}
-    return render(request, 'checkout/order_summary.html', {"items": order_items, "total_price": total_price})
+
+    return render(request, 'checkout/confirmed.html', context=context)
 
 
-
-def create_order_unpaid(request):
+def create_order_unpayed(request):
     order = Order()
     order.user = request.user
     order.is_paid = False
     order.save()
-    order_items = []
-    total_price = 0
-    for prod_id, quantity in request.session['cart'].items():
-        prod = Product.objects.get(id=prod_id)
-        price = quantity * int(prod.price)
-        total_price += price
+    for id in request.session['cart']:
+        item = Product.objects.filter(pk=id).first()
         order_item = OrderItem()
         order_item.order = order
-        order_item.product = prod
-        order_item.quantity = quantity
-        order_item.price = prod.price
+        order_item.product = item
         order_item.save()
-        order_items.append({'product': prod, 'quantity': quantity, 'price': price})
-    order.total_price = total_price
-    order.save()
-    request.session['cart'] = {}
-    return render(request, 'checkout/order_summary.html', {"items": order_items, "total_price": total_price})
 
+    return render(request, 'checkout/order_summary.html', {})
+
+def create_order_payed(request):
+    order = Order()
+    order.user = request.user
+    order.is_paid = True
+    order.save()
+    for id in request.session['cart']:
+        item = Product.objects.filter(pk=id).first()
+        order_item = OrderItem()
+        order_item.order = order
+        order_item.product = item
+        order_item.save()
+
+
+    return render(request, 'checkout/order_summary.html', {})

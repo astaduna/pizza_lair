@@ -10,11 +10,11 @@
       {% if profile %}
         <h2>Profile Information</h2>
         <ul>
-          <li>Nafn: {{ profile.name }}</li>
-          <li>Heimilisfang: {{ profile.address }}</li>
-          <li>Borg/bær: {{ profile.city }}</li>
-          <li>Land: {{ profile.country }}</li>
-          <li>Póstnúmer: {{ profile.zip }}</li>
+          <p>Nafn: {{ profile.name }}</p>
+          <p>Heimilisfang: {{ profile.address }}</p>
+          <p>Borg/bær: {{ profile.city }}</p>
+          <p>Land: {{ profile.country }}</p>
+          <p>Póstnúmer: {{ profile.zip }}</p>
         </ul>
       {% endif %}
 
@@ -25,21 +25,22 @@
             <th>Vara</th>
             <th>Magn</th>
             <th>Verð</th>
+            <th>Heildarverð</th>
           </tr>
         </thead>
         <tbody>
-          {% for item in items %}
+          {% for item in cart_items %}
             <tr>
-              <td>{{ item.product.name }} </td>
-              <td>{{ item.quantity }} </td>
-              <td>{{ item.price }} </td>
+              <td>{{ item.product.name }}</td>
+              <td>{{ item.quantity }}</td>
+              <td>{{ item.product.price }}</td>
+              <td>{{ item.item_total_price }}</td>
             </tr>
           {% endfor %}
         </tbody>
       </table>
-    <br>
-      <h3>Samtals: {{ total_price }}</h3>
-    <br>
+
+      <h3>Samtals: {{ cart_total_price }}</h3>
       <input type="submit" class="btn btn-primary" value="Staðfesta pöntun" onclick="location.href='{% url 'confirm-order' %}'; return false;"/><br>
     </form>
   </div>

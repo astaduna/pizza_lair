@@ -1,14 +1,16 @@
 {% extends 'base_other.html' %}
 {% block content %}
     <div class="payment-container">
-        <h2 class="payment-header">Payment</h2><br>
+        <h2 class="payment-header">Greiðslu Upplýsingar</h2><br>
     <form class="form form-horizantal" method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" class="btn btn-primary" value="Staðfesta korta upplýsingar" onclick="location.href='{% url 'confirm-paid-order' %}'; return false;"/><br>
-        <a href="{% url 'confirm-unpaid-order' %}" class="pay-on-site">Borga á staðnum</a>
+        <input type="submit" class="btn btn-primary" value="Staðfesta korta upplýsingar"/><br>
+        <a href="{% url 'confirm-unpayed-order' %}" class="pay-on-site">Borga á staðnum</a><br>
+        <a href="{% url 'checkout' %}" class="go-back">Til baka</a>
+
 
     </form>
     </div>
-  
+
 {% endblock %}

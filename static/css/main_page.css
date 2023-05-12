@@ -32,7 +32,7 @@ body {
 }
 .logo_container img {
     width: 140px;
-    margin-left: 270px;
+    margin-left: 120px;
 }
 .login-cart-container {
     list-style-position: outside;
@@ -390,16 +390,15 @@ td a:hover {
     background-color: white;
 }
 
-.payment-container, .profile-container {
+.order-summary-container, .payment-container, .profile-container {
     text-align: center;
-    position: absolute;
-    padding: 40px;
+    margin: 60px;
     background-color: white;
     border: 1px solid #f802dd;
     border-radius: 10px;
-    margin-left: 35%;
     top: 180px;
     box-shadow: 6px 6px 6px grey;
+    padding: 20px 20px;
 }
 .confirmed-order {
     text-align: center;
@@ -428,11 +427,9 @@ a.go-to-checkout {
 input[type="number"] {
     width: 35px;
 }
-.order-summary-container {
-    margin: 100px;
-    padding: 40px;
-    background-color: white;
-    border: 1px solid #f802dd;
-    border-radius: 10px;
-    box-shadow: 6px 6px 6px grey;
+
+.sauces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
 }

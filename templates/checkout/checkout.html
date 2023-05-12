@@ -1,19 +1,11 @@
 {% extends 'base_other.html' %}
 {% block content %}
-    <div class="step-banner">
-        <div class="step-profile"><a href="{% url 'checkout' %}">(PRÓFÍLL)</a></div>
-        <div class="step-place">STAÐIR</div>
-        <div class="step-payment">GREIÐSLA</div>
-        <div class="step-summary">YFIRLIT PÖNTUN</div>
-        <div class="step-confirm">STAÐFESTING</div>
-    </div>
-
     <div class="profile-container">
         <h2 class="profile-header">Prófíll</h2><br>
         <form class="form form-horizantal" method="post">
             {% csrf_token %}
             {{ form }}
-        <a href="{% url 'place' %}" class="continue">Halda áfram í greiðsluferlið</a><br>
+        <a href="{% url 'payment' %}" class="continue">Halda áfram</a><br>
             <a href="{% url 'view_cart' %}" class="go-back">Til baka</a>
         </form>
     </div>
