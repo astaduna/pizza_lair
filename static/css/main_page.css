@@ -414,18 +414,20 @@ td a:hover {
     box-shadow: 6px 6px 6px grey;
 }
 
-.step-banner {
 
+.step-banner {
+    text-align: inherit;
+    position: absolute;
+    padding: 10px;
     background-color: white;
     border: 1px solid #f802dd;
     border-radius: 10px;
+    margin-left: 20%;
     display: grid;
-    margin-left: 10%;
     justify-content: center;
     align-content: center;
-    grid-template-columns: minmax(120px, auto) repeat(5, 150px);
-
+    grid-template-columns: minmax(120px, auto) repeat(4, 150px);
+    flex-grow: inherit;
 
 
 }
-

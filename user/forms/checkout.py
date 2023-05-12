@@ -20,12 +20,12 @@ class CheckoutPlaceForm(forms.Form):
         ('RVK', 'Reykjavík'),
         ('HFJ', 'Hafnarfjörður'),
     )
-    place = forms.ChoiceField(choices=Checkout_Places, widget=forms.Select(attrs={'class': 'form-control'}))
+    staðir = forms.ChoiceField(choices=Checkout_Places, widget=forms.Select(attrs={'class': 'form-control'}))
 
 
 class CheckoutPaymentForm(forms.Form):
-    name_of_cardholder = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
-    card_number = forms.IntegerField(widget=forms.TextInput(attrs={'class': 'form-control',
+    nafn_af_korthafandi = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    kortanúmer = forms.IntegerField(widget=forms.TextInput(attrs={'class': 'form-control',
                                                                     'placeholder': '1234-1234-1234-1234',
                                                                     'pattern': '[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}',
                                                                     'maxlength': 19,
@@ -35,7 +35,7 @@ class CheckoutPaymentForm(forms.Form):
                                                            'maxlength': 3,
                                                            'title': '3 digit number',
                                                            'label': 'CVC'}))
-    expiration_date = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control',
+    gildistími = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control',
                                                                     'pattern': '(?:0[5-9]|1[0-2])/[2-9]{1}[0-9]{1}',
                                                                     'maxlength': 5,
                                                                     'title': 'mm/yy',
