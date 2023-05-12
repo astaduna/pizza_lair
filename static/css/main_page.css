@@ -32,7 +32,7 @@ body {
 }
 .logo_container img {
     width: 140px;
-    margin-left: 120px;
+    margin-left: 270px;
 }
 .login-cart-container {
     list-style-position: outside;
@@ -354,7 +354,7 @@ td {
     padding: 2px 7px;
 }
 td a {
-    padding: 8px;
+    padding: 2px;
     background-color:#FFD9FB;
     border-radius: 10px;
     border:0.1px solid #FA6BEB;
@@ -390,7 +390,7 @@ td a:hover {
     background-color: white;
 }
 
-.order-summary-container, .payment-container, .profile-container, .place-container {
+.payment-container, .profile-container {
     text-align: center;
     position: absolute;
     padding: 40px;
@@ -400,7 +400,6 @@ td a:hover {
     margin-left: 35%;
     top: 180px;
     box-shadow: 6px 6px 6px grey;
-
 }
 .confirmed-order {
     text-align: center;
@@ -413,21 +412,27 @@ td a:hover {
     top: 180px;
     box-shadow: 6px 6px 6px grey;
 }
-
-
-.step-banner {
-    text-align: inherit;
-    position: absolute;
-    padding: 10px;
+.clear-cart-container {
+    display: flex;
+}
+a.go-to-checkout {
+    height: 30px;
+    color: black;
+    padding: 20px;
     background-color: white;
     border: 1px solid #f802dd;
     border-radius: 10px;
-    margin-left: 20%;
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    grid-template-columns: minmax(120px, auto) repeat(4, 150px);
-    flex-grow: inherit;
-
-
+    box-shadow: 6px 6px 6px grey;
+    margin-left: 200px;
+}
+input[type="number"] {
+    width: 35px;
+}
+.order-summary-container {
+    margin: 100px;
+    padding: 40px;
+    background-color: white;
+    border: 1px solid #f802dd;
+    border-radius: 10px;
+    box-shadow: 6px 6px 6px grey;
 }
