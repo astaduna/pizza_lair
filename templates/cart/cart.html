@@ -13,6 +13,7 @@
     <thead>
         <tr>
             <th>Vara</th>
+            <th>Fjöldi</th>
             <th>Verð</th>
             <th> </th>
         </tr>
@@ -21,6 +22,12 @@
         {% for item in cartitems %}
         <tr>
             <td>{{ item.name }}</td>
+    <td>
+        <form action="{% url 'update_cart' product_id=item.id %}" method="GET">
+            <input type="number" name="quantity" value="{{ item.quantity }}" min="1" required>
+            <button type="submit">Update</button>
+        </form>
+    </td>
             <td>{{ item.price }}</td>
             <td>
                 <a href="{% url 'remove_from_cart' item.id %}" class="btn btn-danger btn-sm">Eyða</a>
@@ -42,6 +49,6 @@
     Karfan þín er tóm.
 </div>
 {% endif %}
-
 </div>
 {% endblock %}
+
