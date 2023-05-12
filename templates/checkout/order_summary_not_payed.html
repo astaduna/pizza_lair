@@ -4,7 +4,7 @@
     <div class="order-summary-container">
       <h1>Order Summary</h1>
 
-  <form method="post" action="{% url 'confirm-order' %}">
+  <form method="post" action="{% url 'confirm-unpayed-order' %}">
     {% csrf_token %}
 
     {% if profile %}
@@ -37,7 +37,7 @@
     </table>
 
     <h3>Total Price: {{ total_price }}</h3>
-    <button class="confirm-order" type="submit">Staðfesta pöntun</button>
+    <button class="confirm-unpayed-order" type="submit">Staðfesta pöntun</button>
   </form>
     </div>
 

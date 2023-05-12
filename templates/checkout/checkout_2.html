@@ -5,8 +5,8 @@
     <form class="form form-horizantal" method="post">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" class="btn btn-primary" value="Staðfesta korta upplýsingar" onclick="location.href='{% url 'order-summary' %}'; return false;"/><br>
-        <a href="{% url 'order-summary' %}" class="pay-on-site">Borga á staðnum</a>
+        <input type="submit" class="btn btn-primary" value="Staðfesta korta upplýsingar" onclick="location.href='{% url 'confirm-payed-order' %}'; return false;"/><br>
+        <a href="{% url 'confirm-unpayed-order' %}" class="pay-on-site">Borga á staðnum</a>
 
     </form>
     </div>
