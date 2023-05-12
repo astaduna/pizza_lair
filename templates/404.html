@@ -1,0 +1,11 @@
+{% block title %}404 Error{% endblock %}
+
+    {% block content %}
+    <div class="jumbotron">
+      <h1 class="display-4">404 Error Page not Found!</h1>
+      <p class="lead">404 Villa: Síða fannst ekki. Síðan sem þú ert að leita að fannst ekki á þjóninum okkar. Athugaðu vefslóðina fyrir mistök og reyndu aftur. Ef þú heldur áfram að lenda í vandræðum með að finna síðuna, vinsamlegast hafðu samband við þjónustudeild okkar til að fá aðstoð .</p>
+      <hr class="my-4">
+      <a class="btn btn-primary btn-lg" href="{% url 'main_page-index' %}" role="button">Fara aftur á heimasíðu</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% block title %}404 Error{% endblock %}
+
+    {% block content %}
+    <div class="jumbotron">
+      <h1 class="display-4">500 Internal server error!</h1>
+      <p class="lead">Úps! Eitthvað fór úrskeiðis. Vinsamlegast reyndu aftur síðar eða hafðu samband við kerfisstjóra vefsíðunnar ef vandamálið er viðvarandi</p>
+      <hr class="my-4">
+      <a class="btn btn-primary btn-lg" href="{% url 'main_page-index' %}" role="button">Fara aftur á heimasíðu</a>
+</div>
+
+{% endblock %}
