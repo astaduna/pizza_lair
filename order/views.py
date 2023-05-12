@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect
+from order.models import Order, OrderItem
 from user.models import Profile
 from user.forms.checkout import CheckoutProfileInfo, CheckoutPaymentForm
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from cart.models import Product
-from order.forms.order import OrderForm
+
 
 
 
@@ -54,17 +55,37 @@ def summary(request):
 
 @login_required
 def create_order(request):
-    if request.method == 'POST':
-        form = OrderForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.save()
-            return redirect('confirm-order', pk=post.pk)
-    else:
-        form = OrderForm()
+    print(request.session['cart'])
+    order = Order()
+    order.user = request.user
+    order.is_paid = True
+    order.save()
+    for id in request.session['cart']:
+        item = Product.objects.filter(pk=id).first()
+        order_item = OrderItem()
+        order_item.order = order
+        order_item.product = item
+        order_item.save()
+    request.session['cart'] = []
 
-    return render(request, 'checkout/confirm_order.html', {'form': form})
+
+
+    return render(request, 'checkout/confirm_order.html', {})
+
+def create_pick_up_order(request):
+    print(request.session['cart'])
+    order = Order()
+    order.user = request.user
+    order.is_paid = False
+    order.save()
+    for id in request.session['cart']:
+        item = Product.objects.filter(pk=id).first()
+        order_item = OrderItem()
+        order_item.order = order
+        order_item.product = item
+        order_item.save()
+    request.session['cart'] = []
 
 
 
+    return render(request, 'checkout/confirm_order.html', {})
