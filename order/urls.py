@@ -5,7 +5,7 @@ urlpatterns = [
     path('', views.profile, name='checkout'),
     path('payment/', views.payment, name='payment'),
     path('order_summary/', views.summary, name='confirm-order'),
-    path('order_confirmed/unpayed/', views.create_order_unpayed, name='confirm-unpayed-order'),
-    path('order_confirmed/payed/', views.create_order_payed, name='confirm-payed-order'),
+    path('order_confirmed/unpaid/', views.create_order_unpaid, name='confirm-unpaid-order'),
+    path('order_confirmed/paid/', views.create_order_paid, name='confirm-paid-order'),
 
 ]
