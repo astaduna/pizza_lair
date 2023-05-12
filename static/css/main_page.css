@@ -412,3 +412,14 @@ td a:hover {
     top: 180px;
     box-shadow: 6px 6px 6px grey;
 }
+a.go-to-checkout {
+    color: black;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #f802dd;
+    border-radius: 10px;
+    box-shadow: 6px 6px 6px grey;
+    margin-left: 150px;
+
+
+}

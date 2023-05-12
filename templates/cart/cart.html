@@ -2,53 +2,49 @@
 
 {% block content %}
     <div class="shopping-cart">
-{% if added_product %}
-<div class="alert-success">
-    {{ added_product.name }} added to cart!
-</div>
-{% endif %}
+        {% if added_product %}
+            <div class="alert-success">
+                {{ added_product.name }} added to cart!
+            </div>
+        {% endif %}
 
-{% if cartitems %}
-<table class="cart-table">
-    <thead>
-        <tr>
-            <th>Vara</th>
-            <th>Fjöldi</th>
-            <th>Verð</th>
-            <th> </th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for item in cartitems %}
-        <tr>
-            <td>{{ item.name }}</td>
-    <td>
-        <form action="{% url 'update_cart' product_id=item.id %}" method="GET">
-            <input type="number" name="quantity" value="{{ item.quantity }}" min="1" required>
-            <button type="submit">Update</button>
-        </form>
-    </td>
-            <td>{{ item.price }}</td>
-            <td>
-                <a href="{% url 'remove_from_cart' item.id %}" class="btn btn-danger btn-sm">Eyða</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-    <p>Total price: {{ total_price }}</p>
-    <div class="clear-cart-container">
-    <form method="post" action="{% url 'clear_cart' %}">
-        {% csrf_token %}
-        <button type="submit" class="btn btn-primary">Tæma körfu</button>
-    </form>
-    <a href="{% url 'checkout' %}" class="btn btn-success">Áfram í borgun</a>
- </div>
-{% else %}
-<div class="alert alert-info">
-    Karfan þín er tóm.
-</div>
-{% endif %}
-</div>
+        {% if cart_items %}
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Vara</th>
+                        <th>Fjöldi</th>
+                        <th>Verð</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart_items %}
+                        <tr>
+                            <td>{{ item.product.name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.product.price }}</td>
+                            <td>
+                                {% if item.product.id %}
+                                    <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger btn-sm">Eyða</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <p>Total price: {{ total_price }}</p>
+            <div class="clear-cart-container">
+                <form method="post" action="{% url 'clear_cart' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Tæma körfu</button>
+                </form>
+                                <a href="{% url 'checkout' %}" class="go-to-checkout">Áfram í borgun</a>
+            </div>
+        {% else %}
+            <div class="alert alert-info">
+                Karfan þín er tóm.
+            </div>
+        {% endif %}
+    </div>
 {% endblock %}
-
