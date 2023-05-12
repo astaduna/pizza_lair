@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from user.models import Profile
-from user.forms.checkout import CheckoutProfileInfo, CheckoutPaymentForm
+from user.forms.checkout import CheckoutProfileInfo, CheckoutPaymentForm, CheckoutPlaceForm
 from django.contrib.auth.decorators import login_required
-from django.urls import reverse
+# from django.urls import reverse
 from cart.models import Product
 from order.forms.order import OrderForm
 
@@ -23,6 +23,10 @@ def profile(request):
         'form': CheckoutProfileInfo(instance=profile)
     })
 
+def place(request):
+    form = CheckoutPlaceForm()
+    return render(request, 'checkout/checkout_place.html',
+                  {'form':form})
 
 def payment(request):
     form = CheckoutPaymentForm()

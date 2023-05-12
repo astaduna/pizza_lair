@@ -1,0 +1,15 @@
+{% extends 'base_other.html' %}
+{% block content %}
+    <div class="place-container">
+        <h2 class="place-header">Veldu staðsetningu</h2><br>
+    <form class="form form-horizantal" method="post">
+        {% csrf_token %}
+        {{ form }}
+    <a href="{% url 'payment' %}" class="continue">Halda áfram í greiðsluferlið</a><br>
+        <a href="{% url 'profile' %}" class="go-back">Til baka</a>
+
+    </form>
+    </div>
+  
+{% endblock %}
+

@@ -14,6 +14,13 @@ class CheckoutProfileInfo(forms.ModelForm):
             'zip': forms.TextInput(attrs={'class': 'form-control'}),
         }
 
+class CheckoutPlaceForm(forms.Form):
+    Checkout_Places= (
+        ('KEF', 'Keflavík'),
+        ('RVK', 'Reykjavík'),
+        ('HFJ', 'Hafnarfjörður'),
+    )
+    place = forms.ChoiceField(choices=Checkout_Places, widget=forms.Select(attrs={'class': 'form-control'}))
 
 
 class CheckoutPaymentForm(forms.Form):

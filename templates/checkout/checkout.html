@@ -5,7 +5,7 @@
         <form class="form form-horizantal" method="post">
             {% csrf_token %}
             {{ form }}
-        <a href="{% url 'payment' %}" class="continue">Halda áfram í greiðsluferlið</a><br>
+        <a href="{% url 'place' %}" class="continue">Halda áfram í greiðsluferlið</a><br>
             <a href="{% url 'view_cart' %}" class="go-back">Til baka</a>
         </form>
     </div>

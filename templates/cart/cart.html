@@ -13,12 +13,6 @@
     <thead>
         <tr>
             <th>Vara</th>
-            <th>Fjöldi</th>
-             <form action="{% url 'update_cart' product_id=cartitems.item.id %}" method="POST">
-                {% csrf_token %}
-              <input type="number" name="quantity" value="{{ cart_item.quantity }}" min="1" required>
-              <button type="submit">Update</button>
- </form>
             <th>Verð</th>
             <th> </th>
         </tr>
@@ -27,7 +21,6 @@
         {% for item in cartitems %}
         <tr>
             <td>{{ item.name }}</td>
-
             <td>{{ item.price }}</td>
             <td>
                 <a href="{% url 'remove_from_cart' item.id %}" class="btn btn-danger btn-sm">Eyða</a>
@@ -52,4 +45,3 @@
 
 </div>
 {% endblock %}
-
