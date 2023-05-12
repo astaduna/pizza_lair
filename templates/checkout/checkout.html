@@ -1,7 +1,18 @@
 {% extends 'base_other.html' %}
 {% block content %}
+    <div class="step-container">
+        <ul class="progressbar">
+            <li class="step-profile"><a href="{% url 'checkout' %}">PRÓFÍLL</a>
+            <li class="step-place">STAÐIR
+        <div class="step-payment">GREIÐSLA</div>
+        <div class="step-summary">YFIRLIT PÖNTUN</div>
+        <div class="step-confirm">STAÐFESTING</div>"
+        </ul>
+
+    </div>
+
     <div class="profile-container">
-        <h2 class="profile-header">Profile</h2><br>
+        <h2 class="profile-header">Prófíll</h2><br>
         <form class="form form-horizantal" method="post">
             {% csrf_token %}
             {{ form }}

@@ -1,14 +1,21 @@
 {% extends 'base_other.html' %}
 {% block content %}
+    <div class="step-banner">
+        <div class="step-profile"><a href="{% url 'checkout' %}">PRÓFÍLL</a></div>
+        <div class="step-place"><a href="{% url 'place' %}">STAÐIR</a></div>
+        <div class="step-payment"><a href="{% url 'payment' %}">(GREIÐSLA)</a></div>
+        <div class="step-summary">YFIRLIT PÖNTUN</div>
+        <div class="step-confirm">STAÐFESTING</div>
+    </div>
     <div class="payment-container">
-        <h2 class="payment-header">Payment</h2><br>
-    <form class="form form-horizantal" method="post">
-        {% csrf_token %}
-        {{ form }}
-    <input type="submit" class="btn btn-primary" value="Continue"/><br>
+        <h2 class="payment-header">Greiðsla</h2><br>
+        <form class="form form-horizantal" method="post">
+            {% csrf_token %}
+            {{ form }}
+        <input type="submit" class="btn btn-primary" value="Continue"/><br>
         <a href="{% url 'order-summary' %}" class="pay-on-site">Borga á staðnum</a>
 
-    </form>
+        </form>
     </div>
   
 {% endblock %}
