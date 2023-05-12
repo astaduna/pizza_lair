@@ -55,7 +55,6 @@ def summary(request):
 
 @login_required
 def create_order(request):
-    print(request.session['cart'])
     order = Order()
     order.user = request.user
     order.is_paid = True
@@ -66,14 +65,13 @@ def create_order(request):
         order_item.order = order
         order_item.product = item
         order_item.save()
-    request.session['cart'] = []
+    request.session['cart'] = {}
 
 
 
     return render(request, 'checkout/confirm_order.html', {})
 
 def create_pick_up_order(request):
-    print(request.session['cart'])
     order = Order()
     order.user = request.user
     order.is_paid = False
@@ -84,7 +82,7 @@ def create_pick_up_order(request):
         order_item.order = order
         order_item.product = item
         order_item.save()
-    request.session['cart'] = []
+    request.session['cart'] = {}
 
 
 
