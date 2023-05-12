@@ -1,0 +1,43 @@
+{% extends 'base_other.html' %}
+
+{% block content %}
+  <div class="order-summary-container">
+    <h1>Yfirlit á pöntun:</h1>
+
+    <form method="post" action="{% url 'confirm-order' %}">
+      {% csrf_token %}
+
+      {% if profile %}
+        <h2>Profile Information</h2>
+        <ul>
+          <p>Nafn: {{ profile.name }}</p>
+          <p>Heimilisfang: {{ profile.address }}</p>
+          <p>Borg/bær: {{ profile.city }}</p>
+          <p>Land: {{ profile.country }}</p>
+          <p>Póstnúmer: {{ profile.zip }}</p>
+        </ul>
+      {% endif %}
+
+      <h2>Pöntunin þín:</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Vara</th>
+            <th>Verð</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in items %}
+            <tr>
+              <td>{{ item.name }}</td>
+              <td>{{ item.price }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <h3>Samtals: {{ total_price }}</h3>
+      <input type="submit" class="btn btn-primary" value="Staðfesta pöntun" onclick="location.href='{% url 'confirm-order' %}'; return false;"/><br>
+    </form>
+  </div>
+{% endblock %}
