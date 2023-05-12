@@ -1,10 +1,12 @@
 {% extends 'base_other.html' %}
 {% block content %}
-    <h1>User information</h1>
+    <div class="profile-container">
+    <h2>Prófíll</h2>
     <form class="form form-horizantal" method="post">
         {% csrf_token %}
         {{ form }}
     <input type="submit" class="btn btn-primary" value="Save"/>
     </form>
+    </div>
 
 {% endblock %}
